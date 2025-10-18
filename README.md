@@ -13,13 +13,6 @@
 <p align="center">
   <a href="#"><img src="https://skillicons.dev/icons?i=python,c,java,javascript,html,css,react,nodejs,express,tailwind,mongodb,mysql,git,github,fastapi,flask,vscode,docker,postman,anaconda&perline=10" /></a>
 </p>
-<p align="center">
-  <img src="https://img.shields.io/badge/ML-Scikit--Learn-green?style=for-the-badge&logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/Data_Structures-1f8acb?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Algorithms-4b0082?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/REST%20APIs-00aaff?style=for-the-badge" />
-</p>
 
 
 <h2 align="center"><b>🗣️ Github Stats</b></h2>
