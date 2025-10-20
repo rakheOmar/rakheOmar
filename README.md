@@ -25,6 +25,4 @@
 <h2 align="center">🌐 Connect With Me</h2>
 <p align="center">
   <a href="mailto:rakheomar@outlook.com"><img src="https://img.shields.io/badge/Email-rakheomar%40outlook.com-red?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://github.com/rakheOmar"><img src="https://img.shields.io/badge/GitHub-rakheOmar-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/rakheomar"><img src="https://img.shields.io/badge/LinkedIn-Omar%20Rakhe-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 </p>
