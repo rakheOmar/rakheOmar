@@ -1,5 +1,5 @@
-import Markdown from "react-markdown";
 import { motion } from "framer-motion";
+import Markdown from "react-markdown";
 
 export default function AboutSection() {
   return (

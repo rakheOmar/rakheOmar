@@ -25,7 +25,7 @@ export default function PortfolioDock() {
     {
       title: "Home",
       icon: <Home01Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "#",
+      href: "/",
     },
     {
       title: "Blog",

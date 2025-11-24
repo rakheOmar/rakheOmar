@@ -1,6 +1,6 @@
-import { HackathonCard } from "@/components/hackathon-details";
-import { GithubIcon } from "hugeicons-react";
 import { motion } from "framer-motion";
+import { GithubIcon } from "hugeicons-react";
+import { HackathonCard } from "@/components/hackathon-details";
 
 const hackathons = [
   {

@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import PortfolioDock from "@/components/portfolio/FloatingDock";
-
+import Blog from "@/pages/Blog";
 import Portfolio from "@/pages/Portfolio";
 
 const Layout = ({ children }) => {
@@ -30,6 +30,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
         <SpeedInsights />
         <Analytics />
