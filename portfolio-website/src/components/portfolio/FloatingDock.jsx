@@ -41,7 +41,7 @@ export default function PortfolioDock() {
     {
       title: "LinkedIn",
       icon: <Linkedin01Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "https://linkedin.com/rakheOmar",
+      href: "https://www.linkedin.com/in/rakheomar/",
     },
     {
       title: "Twitter",

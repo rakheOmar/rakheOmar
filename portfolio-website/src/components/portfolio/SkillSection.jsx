@@ -31,13 +31,13 @@ export default function SkillsSection() {
     <section id="skills">
       <div className="flex min-h-0 flex-col gap-y-3">
         <motion.h2
-          className="text-xl font-bold font-serif"
+          className="text-xl font-bold text-foreground font-serif mb-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Skill
+          Skills
         </motion.h2>
         <motion.div
           className="flex flex-wrap gap-1"

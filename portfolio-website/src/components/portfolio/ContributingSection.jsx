@@ -50,7 +50,7 @@ export default function ContributingSection() {
   if (loading) {
     return (
       <section id="contributions">
-        <h2 className="text-xl font-bold mb-4 font-serif">Contributions</h2>
+        <h2 className="text-xl font-bold text-foreground font-serif mb-3">Contributions</h2>
         <p className="text-sm text-muted-foreground">Loading contributions...</p>
       </section>
     );
@@ -59,7 +59,7 @@ export default function ContributingSection() {
   if (data.length === 0) {
     return (
       <section id="contributions">
-        <h2 className="text-xl font-bold mb-4 font-serif">Contributions</h2>
+        <h2 className="text-xl font-bold text-foreground font-serif mb-3">Contributions</h2>
         <p className="text-sm text-muted-foreground">No contributions found.</p>
       </section>
     );
@@ -68,7 +68,7 @@ export default function ContributingSection() {
   return (
     <section id="contributions">
       <motion.h2
-        className="text-xl font-bold mb-4 font-serif"
+        className="text-xl font-bold text-foreground font-serif mb-3"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

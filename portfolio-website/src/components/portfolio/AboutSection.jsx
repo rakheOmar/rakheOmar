@@ -5,7 +5,7 @@ export default function AboutSection() {
   return (
     <section id="about">
       <motion.h2
-        className="text-xl font-bold text-foreground font-serif"
+        className="text-xl font-bold text-foreground font-serif mb-3"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
