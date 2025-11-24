@@ -40,6 +40,42 @@ const DATA = {
       image: "",
       video: "/project-demo/markdrop-a-powerful-visual-markdown-editor-and-builder.mp4",
     },
+    {
+      title: "AnalyserGPT",
+      href: "https://github.com/rakheOmar/AnalyserGPT",
+      dates: "Oct 2025",
+      active: true,
+      description:
+        "A multi-agent AI system powered by Microsoft AutoGen and Streamlit. It orchestrates autonomous LLM agents to collaborate on complex analysis tasks, fully containerized with Docker for consistent deployment.",
+      technologies: ["Python", "AutoGen", "Streamlit", "Docker", "LLMs"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/rakheOmar/AnalyserGPT",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/project-demo/analyser-gpt.png",
+      video: "",
+    },
+    {
+      title: "Replacement Calculator",
+      href: "https://github.com/rakheOmar/Replacement-Calculator",
+      dates: "Sep 2024",
+      active: true,
+      description:
+        "A Java Swing desktop application for Operational Research. It calculates optimal replacement schedules for deteriorating items by analyzing maintenance costs, resale value, and capital cost over time.",
+      technologies: ["Java", "Swing", "Operational Research", "Algorithms"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/rakheOmar/Replacement-Calculator",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/project-demo/replacement-calculator.png",
+      video: "",
+    },
   ],
 };
 
