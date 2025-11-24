@@ -1,14 +1,15 @@
-"use client";;
-import { cn } from "@/lib/utils";
+"use client";
+
 import { motion } from "motion/react";
 import { memo, useMemo } from "react";
+import { cn } from "@/lib/utils";
 
 const ShimmerComponent = ({
   children,
   as: Component = "p",
   className,
   duration = 2,
-  spread = 2
+  spread = 2,
 }) => {
   const MotionComponent = motion.create(Component);
 
@@ -23,19 +24,18 @@ const ShimmerComponent = ({
         className
       )}
       initial={{ backgroundPosition: "100% center" }}
-      style={
-        {
-          "--spread": `${dynamicSpread}px`,
+      style={{
+        "--spread": `${dynamicSpread}px`,
 
-          backgroundImage:
-            "var(--bg), linear-gradient(var(--color-muted-foreground), var(--color-muted-foreground))"
-        }
-      }
+        backgroundImage:
+          "var(--bg), linear-gradient(var(--color-muted-foreground), var(--color-muted-foreground))",
+      }}
       transition={{
         repeat: Number.POSITIVE_INFINITY,
         duration,
         ease: "linear",
-      }}>
+      }}
+    >
       {children}
     </MotionComponent>
   );

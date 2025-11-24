@@ -1,10 +1,7 @@
 import { Background, ReactFlow } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-export const Canvas = ({
-  children,
-  ...props
-}) => (
+export const Canvas = ({ children, ...props }) => (
   <ReactFlow
     deleteKeyCode={["Backspace", "Delete"]}
     fitView
@@ -12,7 +9,8 @@ export const Canvas = ({
     panOnScroll
     selectionOnDrag={true}
     zoomOnDoubleClick={false}
-    {...props}>
+    {...props}
+  >
     <Background bgColor="var(--sidebar)" />
     {children}
   </ReactFlow>

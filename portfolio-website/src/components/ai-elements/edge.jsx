@@ -1,14 +1,12 @@
-import { BaseEdge, getBezierPath, getSimpleBezierPath, Position, useInternalNode } from "@xyflow/react";
+import {
+  BaseEdge,
+  getBezierPath,
+  getSimpleBezierPath,
+  Position,
+  useInternalNode,
+} from "@xyflow/react";
 
-const Temporary = ({
-  id,
-  sourceX,
-  sourceY,
-  targetX,
-  targetY,
-  sourcePosition,
-  targetPosition
-}) => {
+const Temporary = ({ id, sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition }) => {
   const [edgePath] = getSimpleBezierPath({
     sourceX,
     sourceY,
@@ -25,18 +23,18 @@ const Temporary = ({
       path={edgePath}
       style={{
         strokeDasharray: "5, 5",
-      }} />
+      }}
+    />
   );
 };
 
-const getHandleCoordsByPosition = (
-  node,
-  handlePosition
-) => {
+const getHandleCoordsByPosition = (node, handlePosition) => {
   // Choose the handle type based on position - Left is for target, Right is for source
   const handleType = handlePosition === Position.Left ? "target" : "source";
 
-  const handle = node.internals.handleBounds?.[handleType]?.find((h) => h.position === handlePosition);
+  const handle = node.internals.handleBounds?.[handleType]?.find(
+    (h) => h.position === handlePosition
+  );
 
   if (!handle) {
     return [0, 0];
@@ -71,10 +69,7 @@ const getHandleCoordsByPosition = (
   return [x, y];
 };
 
-const getEdgeParams = (
-  source,
-  target
-) => {
+const getEdgeParams = (source, target) => {
   const sourcePos = Position.Right;
   const [sx, sy] = getHandleCoordsByPosition(source, sourcePos);
   const targetPos = Position.Left;
@@ -90,13 +85,7 @@ const getEdgeParams = (
   };
 };
 
-const Animated = ({
-  id,
-  source,
-  target,
-  markerEnd,
-  style
-}) => {
+const Animated = ({ id, source, target, markerEnd, style }) => {
   const sourceNode = useInternalNode(source);
   const targetNode = useInternalNode(target);
 

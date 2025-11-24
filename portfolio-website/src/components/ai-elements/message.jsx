@@ -1,44 +1,25 @@
-"use client";;
-import { Button } from "@/components/ui/button";
-import {
-  ButtonGroup,
-  ButtonGroupText,
-} from "@/components/ui/button-group";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  PaperclipIcon,
-  XIcon,
-} from "lucide-react";
+"use client";
+
+import { ChevronLeftIcon, ChevronRightIcon, PaperclipIcon, XIcon } from "lucide-react";
 import { createContext, memo, useContext, useEffect, useState } from "react";
 import { Streamdown } from "streamdown";
+import { Button } from "@/components/ui/button";
+import { ButtonGroup, ButtonGroupText } from "@/components/ui/button-group";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
-export const Message = ({
-  className,
-  from,
-  ...props
-}) => (
+export const Message = ({ className, from, ...props }) => (
   <div
     className={cn(
       "group flex w-full max-w-[80%] gap-2",
       from === "user" ? "is-user ml-auto justify-end" : "is-assistant",
       className
     )}
-    {...props} />
+    {...props}
+  />
 );
 
-export const MessageContent = ({
-  children,
-  className,
-  ...props
-}) => (
+export const MessageContent = ({ children, className, ...props }) => (
   <div
     className={cn(
       "is-user:dark flex w-fit flex-col gap-2 overflow-hidden text-sm",
@@ -46,16 +27,13 @@ export const MessageContent = ({
       "group-[.is-assistant]:text-foreground",
       className
     )}
-    {...props}>
+    {...props}
+  >
     {children}
   </div>
 );
 
-export const MessageActions = ({
-  className,
-  children,
-  ...props
-}) => (
+export const MessageActions = ({ className, children, ...props }) => (
   <div className={cn("flex items-center gap-1", className)} {...props}>
     {children}
   </div>
@@ -104,12 +82,7 @@ const useMessageBranch = () => {
   return context;
 };
 
-export const MessageBranch = ({
-  defaultBranch = 0,
-  onBranchChange,
-  className,
-  ...props
-}) => {
+export const MessageBranch = ({ defaultBranch = 0, onBranchChange, className, ...props }) => {
   const [currentBranch, setCurrentBranch] = useState(defaultBranch);
   const [branches, setBranches] = useState([]);
 
@@ -119,14 +92,12 @@ export const MessageBranch = ({
   };
 
   const goToPrevious = () => {
-    const newBranch =
-      currentBranch > 0 ? currentBranch - 1 : branches.length - 1;
+    const newBranch = currentBranch > 0 ? currentBranch - 1 : branches.length - 1;
     handleBranchChange(newBranch);
   };
 
   const goToNext = () => {
-    const newBranch =
-      currentBranch < branches.length - 1 ? currentBranch + 1 : 0;
+    const newBranch = currentBranch < branches.length - 1 ? currentBranch + 1 : 0;
     handleBranchChange(newBranch);
   };
 
@@ -146,10 +117,7 @@ export const MessageBranch = ({
   );
 };
 
-export const MessageBranchContent = ({
-  children,
-  ...props
-}) => {
+export const MessageBranchContent = ({ children, ...props }) => {
   const { currentBranch, setBranches, branches } = useMessageBranch();
   const childrenArray = Array.isArray(children) ? children : [children];
 
@@ -167,17 +135,14 @@ export const MessageBranchContent = ({
         index === currentBranch ? "block" : "hidden"
       )}
       key={branch.key}
-      {...props}>
+      {...props}
+    >
       {branch}
     </div>
   ));
 };
 
-export const MessageBranchSelector = ({
-  className,
-  from,
-  ...props
-}) => {
+export const MessageBranchSelector = ({ className, from, ...props }) => {
   const { totalBranches } = useMessageBranch();
 
   // Don't render if there's only one branch
@@ -189,14 +154,12 @@ export const MessageBranchSelector = ({
     <ButtonGroup
       className="[&>*:not(:first-child)]:rounded-l-md [&>*:not(:last-child)]:rounded-r-md"
       orientation="horizontal"
-      {...props} />
+      {...props}
+    />
   );
 };
 
-export const MessageBranchPrevious = ({
-  children,
-  ...props
-}) => {
+export const MessageBranchPrevious = ({ children, ...props }) => {
   const { goToPrevious, totalBranches } = useMessageBranch();
 
   return (
@@ -207,17 +170,14 @@ export const MessageBranchPrevious = ({
       size="icon-sm"
       type="button"
       variant="ghost"
-      {...props}>
+      {...props}
+    >
       {children ?? <ChevronLeftIcon size={14} />}
     </Button>
   );
 };
 
-export const MessageBranchNext = ({
-  children,
-  className,
-  ...props
-}) => {
+export const MessageBranchNext = ({ children, className, ...props }) => {
   const { goToNext, totalBranches } = useMessageBranch();
 
   return (
@@ -228,54 +188,46 @@ export const MessageBranchNext = ({
       size="icon-sm"
       type="button"
       variant="ghost"
-      {...props}>
+      {...props}
+    >
       {children ?? <ChevronRightIcon size={14} />}
     </Button>
   );
 };
 
-export const MessageBranchPage = ({
-  className,
-  ...props
-}) => {
+export const MessageBranchPage = ({ className, ...props }) => {
   const { currentBranch, totalBranches } = useMessageBranch();
 
   return (
     <ButtonGroupText
       className={cn("border-none bg-transparent text-muted-foreground shadow-none", className)}
-      {...props}>
+      {...props}
+    >
       {currentBranch + 1}of {totalBranches}
     </ButtonGroupText>
   );
 };
 
-export const MessageResponse = memo(({
-  className,
-  ...props
-}) => (
-  <Streamdown
-    className={cn("size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0", className)}
-    {...props} />
-), (prevProps, nextProps) => prevProps.children === nextProps.children);
+export const MessageResponse = memo(
+  ({ className, ...props }) => (
+    <Streamdown
+      className={cn("size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0", className)}
+      {...props}
+    />
+  ),
+  (prevProps, nextProps) => prevProps.children === nextProps.children
+);
 
 MessageResponse.displayName = "MessageResponse";
 
-export function MessageAttachment({
-  data,
-  className,
-  onRemove,
-  ...props
-}) {
+export function MessageAttachment({ data, className, onRemove, ...props }) {
   const filename = data.filename || "";
-  const mediaType =
-    data.mediaType?.startsWith("image/") && data.url ? "image" : "file";
+  const mediaType = data.mediaType?.startsWith("image/") && data.url ? "image" : "file";
   const isImage = mediaType === "image";
   const attachmentLabel = filename || (isImage ? "Image" : "Attachment");
 
   return (
-    <div
-      className={cn("group relative size-24 overflow-hidden rounded-lg", className)}
-      {...props}>
+    <div className={cn("group relative size-24 overflow-hidden rounded-lg", className)} {...props}>
       {isImage ? (
         <>
           <img
@@ -283,7 +235,8 @@ export function MessageAttachment({
             className="size-full object-cover"
             height={100}
             src={data.url}
-            width={100} />
+            width={100}
+          />
           {onRemove && (
             <Button
               aria-label="Remove attachment"
@@ -293,7 +246,8 @@ export function MessageAttachment({
                 onRemove();
               }}
               type="button"
-              variant="ghost">
+              variant="ghost"
+            >
               <XIcon />
               <span className="sr-only">Remove</span>
             </Button>
@@ -303,8 +257,7 @@ export function MessageAttachment({
         <>
           <Tooltip>
             <TooltipTrigger asChild>
-              <div
-                className="flex size-full shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+              <div className="flex size-full shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
                 <PaperclipIcon className="size-4" />
               </div>
             </TooltipTrigger>
@@ -321,7 +274,8 @@ export function MessageAttachment({
                 onRemove();
               }}
               type="button"
-              variant="ghost">
+              variant="ghost"
+            >
               <XIcon />
               <span className="sr-only">Remove</span>
             </Button>
@@ -332,32 +286,20 @@ export function MessageAttachment({
   );
 }
 
-export function MessageAttachments({
-  children,
-  className,
-  ...props
-}) {
+export function MessageAttachments({ children, className, ...props }) {
   if (!children) {
     return null;
   }
 
   return (
-    <div
-      className={cn("ml-auto flex w-fit flex-wrap items-start gap-2", className)}
-      {...props}>
+    <div className={cn("ml-auto flex w-fit flex-wrap items-start gap-2", className)} {...props}>
       {children}
     </div>
   );
 }
 
-export const MessageToolbar = ({
-  className,
-  children,
-  ...props
-}) => (
-  <div
-    className={cn("mt-4 flex w-full items-center justify-between gap-4", className)}
-    {...props}>
+export const MessageToolbar = ({ className, children, ...props }) => (
+  <div className={cn("mt-4 flex w-full items-center justify-between gap-4", className)} {...props}>
     {children}
   </div>
 );

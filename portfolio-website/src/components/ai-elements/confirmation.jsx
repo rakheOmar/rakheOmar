@@ -1,8 +1,9 @@
-"use client";;
+"use client";
+
+import { createContext, useContext } from "react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { createContext, useContext } from "react";
 
 const ConfirmationContext = createContext(null);
 
@@ -16,12 +17,7 @@ const useConfirmation = () => {
   return context;
 };
 
-export const Confirmation = ({
-  className,
-  approval,
-  state,
-  ...props
-}) => {
+export const Confirmation = ({ className, approval, state, ...props }) => {
   if (!approval || state === "input-streaming" || state === "input-available") {
     return null;
   }
@@ -33,16 +29,11 @@ export const Confirmation = ({
   );
 };
 
-export const ConfirmationTitle = ({
-  className,
-  ...props
-}) => (
+export const ConfirmationTitle = ({ className, ...props }) => (
   <AlertDescription className={cn("inline", className)} {...props} />
 );
 
-export const ConfirmationRequest = ({
-  children
-}) => {
+export const ConfirmationRequest = ({ children }) => {
   const { state } = useConfirmation();
 
   // Only show when approval is requested
@@ -53,17 +44,13 @@ export const ConfirmationRequest = ({
   return children;
 };
 
-export const ConfirmationAccepted = ({
-  children
-}) => {
+export const ConfirmationAccepted = ({ children }) => {
   const { approval, state } = useConfirmation();
 
   // Only show when approved and in response states
   if (
     !approval?.approved ||
-    (state !== "approval-responded" &&
-      state !== "output-denied" &&
-      state !== "output-available")
+    (state !== "approval-responded" && state !== "output-denied" && state !== "output-available")
   ) {
     return null;
   }
@@ -71,17 +58,13 @@ export const ConfirmationAccepted = ({
   return children;
 };
 
-export const ConfirmationRejected = ({
-  children
-}) => {
+export const ConfirmationRejected = ({ children }) => {
   const { approval, state } = useConfirmation();
 
   // Only show when rejected and in response states
   if (
     approval?.approved !== false ||
-    (state !== "approval-responded" &&
-      state !== "output-denied" &&
-      state !== "output-available")
+    (state !== "approval-responded" && state !== "output-denied" && state !== "output-available")
   ) {
     return null;
   }
@@ -89,10 +72,7 @@ export const ConfirmationRejected = ({
   return children;
 };
 
-export const ConfirmationActions = ({
-  className,
-  ...props
-}) => {
+export const ConfirmationActions = ({ className, ...props }) => {
   const { state } = useConfirmation();
 
   // Only show when approval is requested
@@ -101,9 +81,7 @@ export const ConfirmationActions = ({
   }
 
   return (
-    <div
-      className={cn("flex items-center justify-end gap-2 self-end", className)}
-      {...props} />
+    <div className={cn("flex items-center justify-end gap-2 self-end", className)} {...props} />
   );
 };
 
