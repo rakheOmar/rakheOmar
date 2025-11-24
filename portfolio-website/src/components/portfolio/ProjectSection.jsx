@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { GithubIcon, Globe02Icon } from "hugeicons-react";
 import { ProjectDetailCard } from "../project-detail";
 
@@ -32,12 +33,12 @@ const DATA = {
         },
         {
           type: "Source",
-          href: "https://markdrop.vercel.app/",
+          href: "https://github.com/rakheOmar/Markdrop",
           icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
-      video: "/markdrop-a-powerful-visual-markdown-editor-and-builder.mp4",
+      video: "/project-demo/markdrop-a-powerful-visual-markdown-editor-and-builder.mp4",
     },
   ],
 };
@@ -45,20 +46,35 @@ const DATA = {
 export default function ProjectSection() {
   return (
     <section id="projects">
-      <h2 className="text-xl font-bold text-foreground mb-3">Projects</h2>
+      <motion.h2
+        className="text-xl font-bold text-foreground mb-3 font-serif"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Projects
+      </motion.h2>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-        {DATA.projects.map((project) => (
-          <ProjectDetailCard
-            href={project.href}
+        {DATA.projects.map((project, index) => (
+          <motion.div
             key={project.title}
-            title={project.title}
-            description={project.description}
-            dates={project.dates}
-            tags={project.technologies}
-            image={project.image}
-            video={project.video}
-            links={project.links}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <ProjectDetailCard
+              href={project.href}
+              title={project.title}
+              description={project.description}
+              dates={project.dates}
+              tags={project.technologies}
+              image={project.image}
+              video={project.video}
+              links={project.links}
+            />
+          </motion.div>
         ))}
       </div>
     </section>
