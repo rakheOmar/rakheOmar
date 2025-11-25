@@ -49,7 +49,7 @@ export function ProjectDetailCard({
         className
       )}
     >
-      <Link to={href || "#"} className="block cursor-pointer">
+      <Link to={href || "#"} className="block cursor-pointer" aria-label={`View ${title} project`}>
         {video && (
           <video
             src={video}
@@ -80,13 +80,10 @@ export function ProjectDetailCard({
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
 
-          {/* Markdown Description */}
           <div className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
             <Markdown
               components={{
-                // Optimize spacing for the card context
                 p: ({ children }) => <p className="mb-1 last:mb-0 inline">{children}</p>,
-                // Ensure links open in new tab and stand out slightly
                 a: ({ href, children }) => (
                   <a
                     href={href}
@@ -124,7 +121,13 @@ export function ProjectDetailCard({
               const isGitHub = link.type?.toLowerCase() === "github";
 
               return (
-                <a href={link.href} key={idx} target="_blank" rel="noreferrer">
+                <a
+                  href={link.href}
+                  key={idx}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${link.type} for ${title}`}
+                >
                   <Badge className="flex gap-2 px-2 py-1 text-[10px] items-center">
                     {link.icon}
                     {link.type}

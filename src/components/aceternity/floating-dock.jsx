@@ -70,7 +70,14 @@ function IconContainer({ mouseX, title, icon, href, onClick }) {
 
   const isExternal = href.startsWith("http") || href === "#";
   const Component = isExternal ? "a" : Link;
-  const linkProps = isExternal ? { href } : { to: href };
+  const linkProps = isExternal
+    ? {
+        href,
+        "aria-label": title,
+        target: href.startsWith("http") ? "_blank" : undefined,
+        rel: href.startsWith("http") ? "noopener noreferrer" : undefined,
+      }
+    : { to: href, "aria-label": title };
 
   return (
     <Component {...linkProps} onClick={onClick}>
@@ -78,7 +85,7 @@ function IconContainer({ mouseX, title, icon, href, onClick }) {
         ref={ref}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800 w-8 h-8 md:w-auto md:h-auto"
+        className="relative flex aspect-square items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800 w-10 h-10 md:w-auto md:h-auto"
         style={{
           width: typeof window !== "undefined" && window.innerWidth >= 768 ? width : undefined,
           height: typeof window !== "undefined" && window.innerWidth >= 768 ? height : undefined,

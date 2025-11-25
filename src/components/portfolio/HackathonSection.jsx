@@ -103,7 +103,7 @@ export default function HackathonSection() {
 
       <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
         {hackathons.map((project, index) => (
-          <motion.div
+          <motion.li
             key={project.title + project.dates}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -118,7 +118,7 @@ export default function HackathonSection() {
               image={project.image}
               links={project.links}
             />
-          </motion.div>
+          </motion.li>
         ))}
       </ul>
     </section>
