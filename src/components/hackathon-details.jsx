@@ -18,7 +18,7 @@ export function HackathonCard({ title, description, dates, location, image, link
       <div className="flex flex-1 flex-col justify-start gap-1 font-mono">
         {dates && <time className="text-xs text-muted-foreground">{dates}</time>}
 
-        <h2 className="font-semibold leading-none">{title}</h2>
+        <h2 className="font-semibold font-sans leading-none">{title}</h2>
 
         {location && <p className="text-sm font-serif text-muted-foreground">{location}</p>}
 
