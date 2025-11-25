@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useThemeTransition } from "@/hooks/use-theme-transition";
 
 const initialState = {
   theme: "system",
@@ -14,6 +15,9 @@ export function ThemeProvider({
   ...props
 }) {
   const [theme, setTheme] = useState(() => localStorage.getItem(storageKey) || defaultTheme);
+
+  // Apply theme transition animation
+  useThemeTransition(theme, "polygon");
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -35,8 +39,16 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (newTheme) => {
-      localStorage.setItem(storageKey, newTheme);
-      setTheme(newTheme);
+      // Use View Transitions API if supported
+      if (document.startViewTransition) {
+        document.startViewTransition(() => {
+          localStorage.setItem(storageKey, newTheme);
+          setTheme(newTheme);
+        });
+      } else {
+        localStorage.setItem(storageKey, newTheme);
+        setTheme(newTheme);
+      }
     },
   };
 
