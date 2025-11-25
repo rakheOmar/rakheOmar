@@ -31,7 +31,7 @@ const LoadingScreen = ({ onLoadComplete }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+      className={`fixed inset-0 z-9999 flex flex-col items-center justify-center bg-background transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
         isExiting ? "opacity-0 scale-95 blur-sm" : "opacity-100 scale-100 blur-0"
       }`}
     >
