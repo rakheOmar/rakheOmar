@@ -1,7 +1,8 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
-
+import LoadingScreen from "@/components/LoadingScreen";
 import PortfolioDock from "@/components/portfolio/FloatingDock";
 import Blog from "@/pages/Blog";
 import Portfolio from "@/pages/Portfolio";
@@ -25,17 +26,37 @@ const Layout = ({ children }) => {
 };
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasVisited, setHasVisited] = useState(false);
+
+  useEffect(() => {
+    const visited = sessionStorage.getItem("hasVisited");
+    if (visited) {
+      setIsLoading(false);
+      setHasVisited(true);
+    }
+  }, []);
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+    setHasVisited(true);
+    sessionStorage.setItem("hasVisited", "true");
+  };
+
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Portfolio />} />
-          <Route path="/blog" element={<Blog />} />
-        </Routes>
-        <SpeedInsights />
-        <Analytics />
-      </Layout>
-    </Router>
+    <>
+      {isLoading && !hasVisited && <LoadingScreen onLoadComplete={handleLoadComplete} />}
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Portfolio />} />
+            <Route path="/blog" element={<Blog />} />
+          </Routes>
+          <SpeedInsights />
+          <Analytics />
+        </Layout>
+      </Router>
+    </>
   );
 }
 

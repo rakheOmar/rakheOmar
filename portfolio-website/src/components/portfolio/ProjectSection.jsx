@@ -64,7 +64,7 @@ const DATA = {
       dates: "Aug 2025 - Sep 2025",
       active: true,
       description:
-        "A full-stack 'Soil to Sale' ecosystem digitizing the carbon farming market for Indian farmers. Features an AI-powered 'Digital Assessor' (XGBoost/GEE) for remote verification, a gamified Flutter app for data logging, and a Solidity smart contract for immutable credit transparency.",
+        "A 'Soil to Sale' ecosystem digitizing carbon markets for farmers. Features AI-driven remote verification, a gamified Flutter app by [TejasS1233](https://github.com/TejasS1233), and blockchain-backed credit transparency.",
       technologies: [
         "Flutter",
         "React",
