@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Download, Mail } from "lucide-react";
+import { Tick02Icon, Download04Icon, MailOpen02Icon } from "hugeicons-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ export default function ContactSection() {
   return (
     <section id="contact">
       <motion.div
-        className="w-full max-w-3xl mx-auto bg-linear-to-br from-primary/90 to-primary/60 rounded-2xl p-6 py-8 text-primary-foreground flex flex-col items-center text-center gap-4"
+        className="w-full max-w-3xl mx-auto bg-gradient-to-br from-primary/90 to-primary/60 rounded-2xl p-6 py-8 text-primary-foreground flex flex-col items-center text-center gap-4"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -63,7 +63,7 @@ export default function ContactSection() {
                 : "bg-background text-foreground hover:bg-background/90"
             )}
           >
-            {isCopied ? <Check className="size-4" /> : <Mail className="size-4" />}
+            {isCopied ? <Tick02Icon className="size-4" /> : <MailOpen02Icon className="size-4" />}
             {isCopied ? "Copied!" : "Copy Email"}
           </Button>
 
@@ -73,7 +73,7 @@ export default function ContactSection() {
               size="sm"
               className="gap-2 w-full min-w-[140px] border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent"
             >
-              <Download className="size-4" />
+              <Download04Icon className="size-4" />
               Download Resume
             </Button>
           </a>
