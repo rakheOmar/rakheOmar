@@ -112,7 +112,7 @@ export default function ProjectSection() {
   return (
     <section id="projects">
       <motion.h2
-        className="text-xl font-bold text-foreground mb-3 font-serif"
+        className="text-xl text-foreground mb-3 font-serif"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/fk-grotesk");
+@import url("https://fonts.cdnfonts.com/css/berkeley-mono");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -123,9 +126,9 @@ body {
   --sidebar-accent-foreground: oklch(0 0 0);
   --sidebar-border: oklch(0.94 0 0);
   --sidebar-ring: oklch(0 0 0);
-  --font-sans: Geist, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Geist Mono, monospace;
+  --font-sans: "FK Grotesk", Geist, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-mono: "Berkeley Mono", "Geist Mono", monospace;
   --radius: 0.5rem;
   --shadow-x: 0px;
   --shadow-y: 1px;
@@ -178,9 +181,9 @@ body {
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.32 0 0);
   --sidebar-ring: oklch(0.72 0 0);
-  --font-sans: Geist, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Geist Mono, monospace;
+  --font-sans: "FK Grotesk", Geist, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-mono: "Berkeley Mono", "Geist Mono", monospace;
   --radius: 0.5rem;
   --shadow-x: 0px;
   --shadow-y: 1px;

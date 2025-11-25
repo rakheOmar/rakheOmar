@@ -40,10 +40,6 @@ export const ResumeCard = ({
             <div className="inline-flex items-center font-semibold text-sm sm:text-base leading-tight">
               {title}
 
-              {/* LOGIC: 
-                  If description exists: Show toggle chevron (rotates).
-                  If NO description: Show hover chevron (slides in). 
-              */}
               {description ? (
                 <ChevronRightIcon
                   className={cn(
@@ -95,7 +91,7 @@ export const ResumeCard = ({
             )}
           </div>
 
-          <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right whitespace-nowrap ml-4">
+          <div className="text-xs font-mono sm:text-sm tabular-nums text-muted-foreground text-right whitespace-nowrap ml-4">
             {period}
           </div>
         </div>

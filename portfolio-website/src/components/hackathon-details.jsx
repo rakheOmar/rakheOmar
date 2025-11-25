@@ -15,15 +15,15 @@ export function HackathonCard({ title, description, dates, location, image, link
         </Avatar>
       </div>
 
-      <div className="flex flex-1 flex-col justify-start gap-1">
+      <div className="flex flex-1 flex-col justify-start gap-1 font-mono">
         {dates && <time className="text-xs text-muted-foreground">{dates}</time>}
 
         <h2 className="font-semibold leading-none">{title}</h2>
 
-        {location && <p className="text-sm text-muted-foreground">{location}</p>}
+        {location && <p className="text-sm font-serif text-muted-foreground">{location}</p>}
 
         {description && (
-          <div className="prose dark:prose-invert text-sm text-muted-foreground max-w-none">
+          <div className="prose dark:prose-invert text-sm text-muted-foreground max-w-none font-sans">
             <Markdown>{description}</Markdown>
           </div>
         )}

@@ -308,7 +308,7 @@ export const ContributionGraphTotalCount = ({ className, children, ...props }) =
   }
 
   return (
-    <div className={cn("text-muted-foreground", className)} {...props}>
+    <div className={cn("text-muted-foreground font-mono", className)} {...props}>
       {labels.totalCount
         ? labels.totalCount
             .replace("{{count}}", String(totalCount))

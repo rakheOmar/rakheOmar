@@ -68,7 +68,7 @@ export default function ContributingSection() {
   return (
     <section id="contributions">
       <motion.h2
-        className="text-xl font-bold text-foreground font-serif mb-3"
+        className="text-xl text-foreground font-serif mb-3"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

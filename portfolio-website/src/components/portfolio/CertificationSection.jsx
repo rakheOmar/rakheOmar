@@ -25,7 +25,7 @@ export default function CertificationSection() {
     <section id="certifications">
       <div className="flex min-h-0 flex-col gap-y-3">
         <motion.h2
-          className="text-xl font-bold text-foreground font-serif mb-3"
+          className="text-xl text-foreground font-serif mb-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -8,7 +8,7 @@ export default function IntroSection() {
         <div className="gap-2 flex justify-between">
           <div className="flex-col flex flex-1 space-y-1.5">
             <motion.h1
-              className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground"
+              className="font-serif text-3xl tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
