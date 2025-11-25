@@ -38,7 +38,7 @@ const DATA = {
         },
       ],
       image: "",
-      video: "/project-demo/markdrop-a-powerful-visual-markdown-editor-and-builder.mp4",
+      video: "/project-demo/markdrop.mp4",
     },
     {
       title: "AnalyserGPT",
@@ -57,6 +57,35 @@ const DATA = {
       ],
       image: "/project-demo/analyser-gpt.png",
       video: "",
+    },
+    {
+      title: "KisaanCredit",
+      href: "https://github.com/rakheOmar/KisaanCredit",
+      dates: "Aug 2025 - Sep 2025",
+      active: true,
+      description:
+        "A full-stack 'Soil to Sale' ecosystem digitizing the carbon farming market for Indian farmers. Features an AI-powered 'Digital Assessor' (XGBoost/GEE) for remote verification, a gamified Flutter app for data logging, and a Solidity smart contract for immutable credit transparency.",
+      technologies: [
+        "Flutter",
+        "React",
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Solidity",
+        "Google Earth Engine",
+        "MongoDB",
+        "Tailwind CSS",
+        "Shadcn UI",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/rakheOmar/KisaanCredit",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/project-demo/kisaan-credit.mp4",
     },
     {
       title: "Replacement Calculator",

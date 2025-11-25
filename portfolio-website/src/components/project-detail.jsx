@@ -37,8 +37,8 @@ export function ProjectDetailCard({
           forks: data.forks_count,
         });
       })
-      .catch(() => {
-        console.log("OK");
+      .catch((err) => {
+        console.error("Failed to fetch GitHub stats", err);
       });
   }, [links]);
 
@@ -79,8 +79,28 @@ export function ProjectDetailCard({
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
+
+          {/* Markdown Description */}
           <div className="prose max-w-full text-pretty font-sans text-xs text-muted-foreground dark:prose-invert">
-            <Markdown>{description}</Markdown>
+            <Markdown
+              components={{
+                // Optimize spacing for the card context
+                p: ({ children }) => <p className="mb-1 last:mb-0 inline">{children}</p>,
+                // Ensure links open in new tab and stand out slightly
+                a: ({ href, children }) => (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-primary transition-colors"
+                  >
+                    {children}
+                  </a>
+                ),
+              }}
+            >
+              {description}
+            </Markdown>
           </div>
         </div>
       </CardHeader>
