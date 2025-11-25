@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Tick02Icon, Download04Icon, MailOpen02Icon } from "hugeicons-react";
+import { Download04Icon, MailOpen02Icon, Tick02Icon } from "hugeicons-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ export default function ContactSection() {
   return (
     <section id="contact">
       <motion.div
-        className="w-full max-w-3xl mx-auto bg-gradient-to-br from-primary/90 to-primary/60 rounded-2xl p-6 py-8 text-primary-foreground flex flex-col items-center text-center gap-4"
+        className="w-full max-w-3xl mx-auto bg-linear-to-br from-primary/90 to-primary/60 rounded-2xl p-6 py-8 text-primary-foreground flex flex-col items-center text-center gap-4"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
