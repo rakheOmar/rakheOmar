@@ -55,7 +55,7 @@ const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/project-demo/analyser-gpt.png",
+      image: "/project-demo/analyser-gpt.webp",
       video: "",
     },
     {
@@ -102,7 +102,7 @@ const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/project-demo/replacement-calculator.png",
+      image: "/project-demo/replacement-calculator.webp",
       video: "",
     },
   ],

@@ -9,7 +9,7 @@ const hackathons = [
     location: "Mumbai, India",
     description:
       "Ranked in **Top 8 finalists**. Built **TSEC - Student Dashboard**, a responsive front-end tool for managing student tasks and schedules.",
-    image: "/hackathon-icons/minithon.png",
+    image: "/hackathon-icons/minithon.webp",
     links: [],
   },
   {
@@ -18,7 +18,7 @@ const hackathons = [
     location: "Mumbai, India",
     description:
       "Secured **3rd place**. Built **PaperSprint**, a 15-minute document print-and-delivery platform featuring secure authentication and cloud storage integration.",
-    image: "/hackathon-icons/tsec.png",
+    image: "/hackathon-icons/tsec.webp",
     links: [
       {
         title: "Github",
@@ -33,7 +33,7 @@ const hackathons = [
     location: "Mumbai, India",
     description:
       "Developed **MineSave**, a miner safety mechanism designed to detect hazards and improve communication in low-connectivity underground environments.",
-    image: "/hackathon-icons/need-for-code.png",
+    image: "/hackathon-icons/need-for-code.webp",
     links: [],
   },
   {
@@ -42,7 +42,7 @@ const hackathons = [
     location: "Mumbai, India",
     description:
       "Secured **Top 3 in Web/App domain**. Built **SkillVerse**, a secure student freelance marketplace. Features include AI-driven proposal generation, verified skill assessments, and a Solidity smart contract for transparent, immutable transaction records.",
-    image: "/hackathon-icons/vit.png",
+    image: "/hackathon-icons/vit.webp",
     links: [],
   },
   {
@@ -51,7 +51,7 @@ const hackathons = [
     location: "Mumbai, India",
     description:
       "Developed **KisaanCredit**, a 'Soil to Sale' ecosystem using AI and Blockchain to democratize carbon markets for farmers.",
-    image: "/hackathon-icons/nabard.png",
+    image: "/hackathon-icons/nabard.webp",
     links: [
       {
         title: "Github",
@@ -66,7 +66,7 @@ const hackathons = [
     location: "Mumbai, India",
     description:
       "Competed in a 24-hour hackathon. Developed **LifeSave**, a comprehensive platform using Agentic AI systems to streamline blood and organ donation by intelligently connecting donors, hospitals, and blood banks.",
-    image: "/hackathon-icons/codeisance.png",
+    image: "/hackathon-icons/codeisance.webp",
     links: [],
   },
   {
@@ -75,7 +75,7 @@ const hackathons = [
     location: "Remote",
     description:
       "Qualified in the internal round. Developed two major projects: **CiviSeva**, an AI-powered civic reporting platform with geospatial analysis and automated routing; and **Forensight**, a digital forensics tool utilizing multi-agent AI for automated evidence analysis and network visualization.",
-    image: "/hackathon-icons/sih.png",
+    image: "/hackathon-icons/sih.webp",
     links: [],
   },
   {
@@ -83,7 +83,7 @@ const hackathons = [
     dates: "November 28, 2025",
     location: "Mumbai, India",
     description: "Upcoming participation in Mumbai's largest tech community hackathon.",
-    image: "/hackathon-icons/mumbai-hacks.png",
+    image: "/hackathon-icons/mumbai-hacks.webp",
     links: [],
   },
 ];
