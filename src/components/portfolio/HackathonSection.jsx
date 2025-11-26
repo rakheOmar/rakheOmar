@@ -76,7 +76,18 @@ const hackathons = [
     description:
       "Qualified in the internal round. Developed two major projects: **CiviSeva**, an AI-powered civic reporting platform with geospatial analysis and automated routing; and **Forensight**, a digital forensics tool utilizing multi-agent AI for automated evidence analysis and network visualization.",
     image: "/hackathon-icons/sih.webp",
-    links: [],
+    links: [
+      {
+        title: "Github - CiviSeva",
+        icon: <GithubIcon className="size-3" />,
+        href: "https://github.com/TejasS1233/CiviSeva-TheErudition",
+      },
+      {
+        title: "Github - Forensight",
+        icon: <GithubIcon className="size-3" />,
+        href: "https://github.com/TejasS1233/Forensight-TheErudition",
+      },
+    ],
   },
   {
     title: "Mumbai Hacks",
