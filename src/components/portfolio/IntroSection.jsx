@@ -32,7 +32,7 @@ export default function IntroSection() {
             className="shrink-0 "
           >
             <Avatar className="size-28 border">
-              <AvatarImage alt="John Doe" src="/image.webp" />
+              <AvatarImage alt="John Doe" src="/portfolio_pfp.png" />
               <AvatarFallback>OR</AvatarFallback>
             </Avatar>
           </motion.div>
