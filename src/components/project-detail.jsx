@@ -1,11 +1,63 @@
 import { GitForkIcon, StarIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+
+function LazyMedia({ video, image, title, href }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <Link to={href || "#"} className="block cursor-pointer" aria-label={`View ${title} project`}>
+      <div ref={containerRef} className="h-40 w-full overflow-hidden bg-muted/20">
+        {video && isVisible ? (
+          <video
+            src={video}
+            poster={image}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="pointer-events-none mx-auto h-full w-full object-cover object-top transition-opacity duration-500"
+          />
+        ) : (
+          image && (
+            <img
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-full w-full object-cover object-top"
+              loading="lazy"
+            />
+          )
+        )}
+      </div>
+    </Link>
+  );
+}
 
 export function ProjectDetailCard({
   title,
@@ -26,21 +78,26 @@ export function ProjectDetailCard({
     if (!githubLink) return;
 
     const match = githubLink.href.match(/github\.com\/([^/]+)\/([^/]+)/);
-    if (!match) return;
 
-    const [, owner, repo] = match;
+    if (match && match.length >= 3) {
+      const owner = match[1];
+      const repo = match[2].replace(/\/$/, "");
 
-    fetch(`https://api.github.com/repos/${owner}/${repo}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setGithubStats({
-          stars: data.stargazers_count,
-          forks: data.forks_count,
+      fetch(`https://api.github.com/repos/${owner}/${repo}`)
+        .then((res) => {
+          if (!res.ok) throw new Error("Repo not found or limit exceeded");
+          return res.json();
+        })
+        .then((data) => {
+          setGithubStats({
+            stars: data.stargazers_count,
+            forks: data.forks_count,
+          });
+        })
+        .catch((err) => {
+          console.warn(`Could not fetch stats for ${owner}/${repo}:`, err);
         });
-      })
-      .catch((err) => {
-        console.error("Failed to fetch GitHub stats", err);
-      });
+    }
   }, [links]);
 
   return (
@@ -50,28 +107,7 @@ export function ProjectDetailCard({
         className
       )}
     >
-      <Link to={href || "#"} className="block cursor-pointer" aria-label={`View ${title} project`}>
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-          />
-        )}
-        {image && (
-          <img
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
-            loading="lazy"
-          />
-        )}
-      </Link>
+      <LazyMedia video={video} image={image} title={title} href={href} />
 
       <CardHeader className="px-2 pt-2">
         <div className="space-y-1">
@@ -134,17 +170,17 @@ export function ProjectDetailCard({
                     {link.type}
 
                     {isGitHub && githubStats.stars !== null && (
-                      <>
-                        <span className="flex items-center gap-1 ml-1">
-                          <HugeiconsIcon icon={StarIcon} size={14} strokeWidth={1.5} />
+                      <div className="flex items-center gap-2 border-l pl-2 ml-1 border-gray-400/50">
+                        <span className="flex items-center gap-0.5">
+                          <HugeiconsIcon icon={StarIcon} size={10} strokeWidth={2} />
                           {githubStats.stars}
                         </span>
 
-                        <span className="flex items-center gap-1 ml-1">
-                          <HugeiconsIcon icon={GitForkIcon} size={14} strokeWidth={1.5} />
+                        <span className="flex items-center gap-0.5">
+                          <HugeiconsIcon icon={GitForkIcon} size={10} strokeWidth={2} />
                           {githubStats.forks}
                         </span>
-                      </>
+                      </div>
                     )}
                   </Badge>
                 </a>

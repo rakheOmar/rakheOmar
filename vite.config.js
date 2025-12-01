@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    webfontDownload(),
+    webfontDownload([
+      "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Newsreader:wght@400&family=IBM+Plex+Mono:wght@400&display=swap",
+    ]),
     Sitemap({
       hostname: "https://rakheomar.me",
       dynamicRoutes: ["/", "/blog"],
@@ -28,6 +30,9 @@ export default defineConfig({
     },
   },
   server: {
-    port: 6900,
+    port: 9000,
+  },
+  build: {
+    sourcemap: true,
   },
 });

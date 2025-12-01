@@ -76,7 +76,7 @@ export default function PortfolioDock() {
             return (
               <div
                 key={`sep-${idx}`}
-                className="h-8 w-[1px] bg-neutral-200 dark:bg-neutral-800 mx-1"
+                className="h-8 w-px bg-neutral-200 dark:bg-neutral-800 mx-1"
               />
             );
           }

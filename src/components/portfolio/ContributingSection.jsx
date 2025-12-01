@@ -7,6 +7,7 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/kibo-ui/contribution-graph";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
 const GITHUB_USERNAME = "rakheOmar";
@@ -24,10 +25,11 @@ export default function ContributingSection() {
         );
         const result = await response.json();
         const today = new Date();
-        const twelveMonthsAgo = new Date(today);
-        twelveMonthsAgo.setMonth(today.getMonth() - 8);
+        const pastDate = new Date(today);
+        pastDate.setMonth(today.getMonth() - 8);
+
         const filteredData = result.contributions.filter(
-          (contribution) => new Date(contribution.date) >= twelveMonthsAgo
+          (contribution) => new Date(contribution.date) >= pastDate
         );
         setData(filteredData);
       } catch (error) {
@@ -46,73 +48,74 @@ export default function ContributingSection() {
     }
   }, [loading, data]);
 
-  if (loading) {
-    return (
-      <section id="contributions">
-        <h2 className="text-xl font-bold text-foreground font-serif mb-3">Contributions</h2>
-        <p className="text-sm text-muted-foreground">Loading contributions...</p>
-      </section>
-    );
-  }
-
-  if (data.length === 0) {
-    return (
-      <section id="contributions">
-        <h2 className="text-xl font-bold text-foreground font-serif mb-3">Contributions</h2>
-        <p className="text-sm text-muted-foreground">No contributions found.</p>
-      </section>
-    );
-  }
-
   return (
-    <section id="contributions">
+    <section id="contributions" className="w-full">
       <h2 className="text-xl text-foreground font-serif mb-3">Contributions</h2>
-      <div>
-        <ContributionGraph data={data}>
-          <div ref={scrollRef}>
-            <ContributionGraphCalendar>
-              {({ activity, dayIndex, weekIndex }) => (
-                <ContributionGraphBlock
-                  activity={activity}
-                  className={cn(
-                    'data-[level="0"]:fill-[#ebedf0] dark:data-[level="0"]:fill-[#161b22]',
-                    'data-[level="1"]:fill-[#9be9a8] dark:data-[level="1"]:fill-[#0e4429]',
-                    'data-[level="2"]:fill-[#40c463] dark:data-[level="2"]:fill-[#006d32]',
-                    'data-[level="3"]:fill-[#30a14e] dark:data-[level="3"]:fill-[#26a641]',
-                    'data-[level="4"]:fill-[#216e39] dark:data-[level="4"]:fill-[#39d353]'
-                  )}
-                  dayIndex={dayIndex}
-                  weekIndex={weekIndex}
-                />
-              )}
-            </ContributionGraphCalendar>
+
+      {loading ? (
+        <div className="space-y-3">
+          <Skeleton className="h-[140px] w-full rounded-md" />
+          <div className="flex items-center justify-between px-1">
+            <Skeleton className="h-4 w-24" />
+            <div className="flex gap-1">
+              <Skeleton className="h-3 w-3 rounded-sm" />
+              <Skeleton className="h-3 w-3 rounded-sm" />
+              <Skeleton className="h-3 w-3 rounded-sm" />
+              <Skeleton className="h-3 w-3 rounded-sm" />
+              <Skeleton className="h-3 w-3 rounded-sm" />
+            </div>
           </div>
-          <ContributionGraphFooter>
-            <ContributionGraphTotalCount />
-            <ContributionGraphLegend>
-              {({ level }) => (
-                <svg height={12} width={12}>
-                  <rect
+        </div>
+      ) : data.length === 0 ? (
+        <p className="text-sm text-muted-foreground">No contributions found.</p>
+      ) : (
+        <div>
+          <ContributionGraph data={data}>
+            <div ref={scrollRef}>
+              <ContributionGraphCalendar>
+                {({ activity, dayIndex, weekIndex }) => (
+                  <ContributionGraphBlock
+                    activity={activity}
                     className={cn(
-                      "stroke-[1px] stroke-border",
                       'data-[level="0"]:fill-[#ebedf0] dark:data-[level="0"]:fill-[#161b22]',
                       'data-[level="1"]:fill-[#9be9a8] dark:data-[level="1"]:fill-[#0e4429]',
                       'data-[level="2"]:fill-[#40c463] dark:data-[level="2"]:fill-[#006d32]',
                       'data-[level="3"]:fill-[#30a14e] dark:data-[level="3"]:fill-[#26a641]',
                       'data-[level="4"]:fill-[#216e39] dark:data-[level="4"]:fill-[#39d353]'
                     )}
-                    data-level={level}
-                    height={12}
-                    rx={2}
-                    ry={2}
-                    width={12}
+                    dayIndex={dayIndex}
+                    weekIndex={weekIndex}
                   />
-                </svg>
-              )}
-            </ContributionGraphLegend>
-          </ContributionGraphFooter>
-        </ContributionGraph>
-      </div>
+                )}
+              </ContributionGraphCalendar>
+            </div>
+            <ContributionGraphFooter>
+              <ContributionGraphTotalCount />
+              <ContributionGraphLegend>
+                {({ level }) => (
+                  <svg height={12} width={12}>
+                    <rect
+                      className={cn(
+                        "stroke-[1px] stroke-border",
+                        'data-[level="0"]:fill-[#ebedf0] dark:data-[level="0"]:fill-[#161b22]',
+                        'data-[level="1"]:fill-[#9be9a8] dark:data-[level="1"]:fill-[#0e4429]',
+                        'data-[level="2"]:fill-[#40c463] dark:data-[level="2"]:fill-[#006d32]',
+                        'data-[level="3"]:fill-[#30a14e] dark:data-[level="3"]:fill-[#26a641]',
+                        'data-[level="4"]:fill-[#216e39] dark:data-[level="4"]:fill-[#39d353]'
+                      )}
+                      data-level={level}
+                      height={12}
+                      rx={2}
+                      ry={2}
+                      width={12}
+                    />
+                  </svg>
+                )}
+              </ContributionGraphLegend>
+            </ContributionGraphFooter>
+          </ContributionGraph>
+        </div>
+      )}
     </section>
   );
 }

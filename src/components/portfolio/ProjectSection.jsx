@@ -33,7 +33,7 @@ const DATA = {
         },
       ],
       image: "",
-      video: "/project-demo/markdrop.mp4",
+      video: "/project-demo/markdrop.webm",
     },
     {
       title: "AnalyserGPT",
@@ -80,7 +80,7 @@ const DATA = {
         },
       ],
       image: "",
-      video: "/project-demo/kisaan-credit.mp4",
+      video: "/project-demo/kisaan-credit.webm",
     },
     {
       title: "Replacement Calculator",
