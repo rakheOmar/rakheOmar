@@ -15,14 +15,14 @@ export default function ContactSection() {
 
   return (
     <section id="contact">
-      <div className="w-full max-w-3xl mx-auto bg-linear-to-br from-primary/90 to-primary/60 rounded-2xl p-6 py-8 text-primary-foreground flex flex-col items-center text-center gap-4">
-        <div className="inline-block rounded-lg bg-primary-foreground/10 text-primary-foreground px-3 py-1 text-xs backdrop-blur-sm border border-primary-foreground/20">
+      <div className="w-full max-w-3xl mx-auto rounded-lg border bg-card text-card-foreground shadow-sm p-6 py-8 flex flex-col items-center text-center gap-4">
+        <div className="inline-block rounded-md bg-muted px-3 py-1 text-xs text-muted-foreground">
           Contact
         </div>
 
         <div className="space-y-2">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Get in Touch</h2>
-          <p className="text-primary-foreground/80 text-sm md:text-base max-w-[500px] mx-auto">
+          <p className="text-muted-foreground text-sm md:text-base max-w-[500px] mx-auto">
             I'm currently looking for new opportunities. Whether you have a question or just want to
             say hi, feel free to reach out!
           </p>
@@ -34,9 +34,7 @@ export default function ContactSection() {
             size="sm"
             className={cn(
               "gap-2 min-w-[140px] font-semibold transition-all duration-300",
-              isCopied
-                ? "bg-green-500 text-white hover:bg-green-600 border-none"
-                : "bg-background text-foreground hover:bg-background/90"
+              isCopied && "bg-green-500 hover:bg-green-600 text-white"
             )}
           >
             {isCopied ? (
@@ -48,22 +46,18 @@ export default function ContactSection() {
           </Button>
 
           <a href="/Resume.pdf" download="Omar_Rakhe_Resume.pdf" className="w-full sm:w-auto">
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-2 w-full min-w-[140px] border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent"
-            >
+            <Button variant="outline" size="sm" className="gap-2 w-full min-w-[140px]">
               <HugeiconsIcon icon={Download04Icon} size={16} strokeWidth={1.5} />
               Download Resume
             </Button>
           </a>
         </div>
 
-        <p className="text-[10px] text-primary-foreground/60 mt-1">
+        <p className="text-[10px] text-muted-foreground mt-1">
           or email me at{" "}
           <a
             href="mailto:rakheomar@outlook.com"
-            className="text-primary-foreground underline underline-offset-2 hover:opacity-80 transition-opacity"
+            className="text-foreground underline underline-offset-2 hover:opacity-80 transition-opacity"
           >
             rakheomar@outlook.com
           </a>

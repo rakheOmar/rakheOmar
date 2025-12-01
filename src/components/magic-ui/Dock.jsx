@@ -10,7 +10,10 @@ const DEFAULT_DISTANCE = 140;
 const DEFAULT_DISABLEMAGNIFICATION = false;
 
 const dockVariants = cva(
-  "mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 p-2 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-black/10"
+  "mx-auto mt-8 flex h-[58px] w-max items-center justify-center gap-2 rounded-2xl p-2 border shadow-sm transition-all " +
+    // minimal style: solid background, subtle border, no blur
+    "bg-white border-neutral-200 " +
+    "dark:bg-black dark:border-neutral-800"
 );
 
 const Dock = React.forwardRef(
@@ -104,7 +107,7 @@ const DockIcon = ({
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-        disableMagnification && "hover:bg-muted-foreground transition-colors",
+        disableMagnification && "hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors",
         className
       )}
       {...props}
@@ -116,4 +119,16 @@ const DockIcon = ({
 
 DockIcon.displayName = "DockIcon";
 
-export { Dock, DockIcon, dockVariants };
+// New Separator Component
+const DockSeparator = ({ className, ...props }) => {
+  return (
+    <div
+      className={cn("mx-1 h-8 w-[1px] rounded-full bg-neutral-300 dark:bg-neutral-700", className)}
+      {...props}
+    />
+  );
+};
+
+DockSeparator.displayName = "DockSeparator";
+
+export { Dock, DockIcon, DockSeparator, dockVariants };

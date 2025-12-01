@@ -101,12 +101,7 @@ export function ProjectDetailCard({
   }, [links]);
 
   return (
-    <Card
-      className={cn(
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full p-0",
-        className
-      )}
-    >
+    <Card className={cn("flex flex-col overflow-hidden border shadow-none h-full p-0", className)}>
       <LazyMedia video={video} image={image} title={title} href={href} />
 
       <CardHeader className="px-2 pt-2">
