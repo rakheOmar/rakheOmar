@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ResumeCard } from "@/components/detail-cards";
 
 const certifications = [
@@ -24,23 +23,9 @@ export default function CertificationSection() {
   return (
     <section id="certifications">
       <div className="flex min-h-0 flex-col gap-y-3">
-        <motion.h2
-          className="text-xl text-foreground font-serif mb-3"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Certifications
-        </motion.h2>
+        <h2 className="text-xl text-foreground font-serif mb-3">Certifications</h2>
         {certifications.map((cert, index) => (
-          <motion.div
-            key={cert.title}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
+          <div key={cert.title}>
             <ResumeCard
               title={cert.title}
               subtitle={cert.subtitle}
@@ -50,7 +35,7 @@ export default function CertificationSection() {
               period={cert.period}
               description={cert.description}
             />
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

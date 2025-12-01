@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function IntroSection() {
@@ -7,35 +6,20 @@ export default function IntroSection() {
       <div className="w-full max-w-2xl space-y-8">
         <div className="gap-2 flex justify-between">
           <div className="flex-col flex flex-1 space-y-1.5">
-            <motion.h1
-              className="font-serif text-3xl tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <h1 className="font-serif text-3xl tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground">
               Hi, I'm Omar
-            </motion.h1>
-            <motion.p
-              className="max-w-[600px] md:text-xl text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            </h1>
+            <p className="max-w-[600px] md:text-xl text-foreground">
               Full-Stack Dev meeting AI. I craft scalable applications and solve real-world problems
               with modern tech.
-            </motion.p>
+            </p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="shrink-0 "
-          >
+          <div className="shrink-0 ">
             <Avatar className="size-28 border">
               <AvatarImage alt="John Doe" src="/portfolio_pfp.png" />
               <AvatarFallback>OR</AvatarFallback>
             </Avatar>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

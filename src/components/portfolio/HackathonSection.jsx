@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { GithubIcon } from "hugeicons-react";
+import { GithubIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { HackathonCard } from "@/components/hackathon-details";
 
 const hackathons = [
@@ -22,7 +22,7 @@ const hackathons = [
     links: [
       {
         title: "Github",
-        icon: <GithubIcon className="size-3" />,
+        icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         href: "https://github.com/rakheOmar/print-sprint-2.0",
       },
     ],
@@ -55,7 +55,7 @@ const hackathons = [
     links: [
       {
         title: "Github",
-        icon: <GithubIcon className="size-3" />,
+        icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         href: "https://github.com/rakheOmar/KisaanCredit",
       },
     ],
@@ -79,48 +79,26 @@ const hackathons = [
     links: [
       {
         title: "Github - CiviSeva",
-        icon: <GithubIcon className="size-3" />,
+        icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         href: "https://github.com/TejasS1233/CiviSeva-TheErudition",
       },
       {
         title: "Github - Forensight",
-        icon: <GithubIcon className="size-3" />,
+        icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         href: "https://github.com/TejasS1233/Forensight-TheErudition",
       },
     ],
-  },
-  {
-    title: "Mumbai Hacks",
-    dates: "November 28, 2025",
-    location: "Mumbai, India",
-    description: "Upcoming participation in Mumbai's largest tech community hackathon.",
-    image: "/hackathon-icons/mumbai-hacks.webp",
-    links: [],
   },
 ];
 
 export default function HackathonSection() {
   return (
     <section id="hackathons">
-      <motion.h2
-        className="text-xl text-foreground font-serif mb-3"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Hackathons
-      </motion.h2>
+      <h2 className="text-xl text-foreground font-serif mb-3">Hackathons</h2>
 
       <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
         {hackathons.map((project, index) => (
-          <motion.li
-            key={project.title + project.dates}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
+          <li key={project.title + project.dates}>
             <HackathonCard
               title={project.title}
               description={project.description}
@@ -129,7 +107,7 @@ export default function HackathonSection() {
               image={project.image}
               links={project.links}
             />
-          </motion.li>
+          </li>
         ))}
       </ul>
     </section>

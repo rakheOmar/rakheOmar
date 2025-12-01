@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
   ContributionGraph,
@@ -67,21 +66,8 @@ export default function ContributingSection() {
 
   return (
     <section id="contributions">
-      <motion.h2
-        className="text-xl text-foreground font-serif mb-3"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Contributions
-      </motion.h2>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-      >
+      <h2 className="text-xl text-foreground font-serif mb-3">Contributions</h2>
+      <div>
         <ContributionGraph data={data}>
           <div ref={scrollRef}>
             <ContributionGraphCalendar>
@@ -126,7 +112,7 @@ export default function ContributingSection() {
             </ContributionGraphLegend>
           </ContributionGraphFooter>
         </ContributionGraph>
-      </motion.div>
+      </div>
     </section>
   );
 }

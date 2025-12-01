@@ -1,11 +1,6 @@
-import { motion } from "framer-motion";
-import { GithubIcon, Globe02Icon } from "hugeicons-react";
+import { GithubIcon, Globe02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { ProjectDetailCard } from "../project-detail";
-
-const Icons = {
-  globe: (props) => <Globe02Icon {...props} />,
-  github: (props) => <GithubIcon {...props} />,
-};
 
 const DATA = {
   projects: [
@@ -29,12 +24,12 @@ const DATA = {
         {
           type: "Website",
           href: "https://markdrop.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
+          icon: <HugeiconsIcon icon={Globe02Icon} size={12} strokeWidth={1.5} />,
         },
         {
           type: "Source",
           href: "https://github.com/rakheOmar/Markdrop",
-          icon: <Icons.github className="size-3" />,
+          icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         },
       ],
       image: "",
@@ -52,7 +47,7 @@ const DATA = {
         {
           type: "Source",
           href: "https://github.com/rakheOmar/AnalyserGPT",
-          icon: <Icons.github className="size-3" />,
+          icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         },
       ],
       image: "/project-demo/analyser-gpt.webp",
@@ -81,7 +76,7 @@ const DATA = {
         {
           type: "Source",
           href: "https://github.com/rakheOmar/KisaanCredit",
-          icon: <Icons.github className="size-3" />,
+          icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         },
       ],
       image: "",
@@ -99,7 +94,7 @@ const DATA = {
         {
           type: "Source",
           href: "https://github.com/rakheOmar/Replacement-Calculator",
-          icon: <Icons.github className="size-3" />,
+          icon: <HugeiconsIcon icon={GithubIcon} size={12} strokeWidth={1.5} />,
         },
       ],
       image: "/project-demo/replacement-calculator.webp",
@@ -111,24 +106,10 @@ const DATA = {
 export default function ProjectSection() {
   return (
     <section id="projects">
-      <motion.h2
-        className="text-xl text-foreground mb-3 font-serif"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Projects
-      </motion.h2>
+      <h2 className="text-xl text-foreground mb-3 font-serif">Projects</h2>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
         {DATA.projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
+          <div key={project.title}>
             <ProjectDetailCard
               href={project.href}
               title={project.title}
@@ -139,7 +120,7 @@ export default function ProjectSection() {
               video={project.video}
               links={project.links}
             />
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

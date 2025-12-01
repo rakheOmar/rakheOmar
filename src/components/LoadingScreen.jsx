@@ -41,7 +41,7 @@ const LoadingScreen = ({ onLoadComplete }) => {
           <span className="font-mono text-xs text-muted-foreground tabular-nums">{progress}%</span>
         </div>
 
-        <div className="h-[2px] w-full overflow-hidden bg-muted">
+        <div className="h-0.5 w-full overflow-hidden bg-muted">
           <div
             className="h-full bg-foreground transition-all duration-200 ease-out"
             style={{ width: `${progress}%` }}

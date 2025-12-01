@@ -1,4 +1,5 @@
-import { GitFork, Star } from "lucide-react";
+import { GitForkIcon, StarIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { Link } from "react-router-dom";
@@ -135,12 +136,12 @@ export function ProjectDetailCard({
                     {isGitHub && githubStats.stars !== null && (
                       <>
                         <span className="flex items-center gap-1 ml-1">
-                          <Star size={14} />
+                          <HugeiconsIcon icon={StarIcon} size={14} strokeWidth={1.5} />
                           {githubStats.stars}
                         </span>
 
                         <span className="flex items-center gap-1 ml-1">
-                          <GitFork size={14} />
+                          <HugeiconsIcon icon={GitForkIcon} size={14} strokeWidth={1.5} />
                           {githubStats.forks}
                         </span>
                       </>

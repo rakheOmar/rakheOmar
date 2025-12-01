@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,7 +27,6 @@ export const ResumeCard = ({
   };
 
   return (
-    // 1. Added 'group' class here
     <Link to={href || "#"} className="block cursor-pointer group" onClick={handleClick}>
       <Card className="flex flex-row items-start gap-x-4 border-none shadow-none bg-transparent p-0">
         <Avatar className="inline-flex size-12 bg-muted-background dark:bg-foreground border flex-none shrink-0">
@@ -41,16 +40,22 @@ export const ResumeCard = ({
               {title}
 
               {description ? (
-                <ChevronRightIcon
+                <HugeiconsIcon
+                  icon={ArrowRight01Icon}
+                  size={16}
+                  strokeWidth={1.5}
                   className={cn(
-                    "size-4 ml-1 transition-transform duration-300 ease-out",
+                    "ml-1 transition-transform duration-300 ease-out",
                     isExpanded ? "rotate-90" : "rotate-0"
                   )}
                 />
               ) : (
-                <ChevronRightIcon
+                <HugeiconsIcon
+                  icon={ArrowRight01Icon}
+                  size={16}
+                  strokeWidth={1.5}
                   className={cn(
-                    "size-4 ml-1 transition-all duration-300 ease-out",
+                    "ml-1 transition-all duration-300 ease-out",
                     "opacity-0 -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100"
                   )}
                 />
@@ -74,20 +79,16 @@ export const ResumeCard = ({
             )}
 
             {description && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{
-                  opacity: isExpanded ? 1 : 0,
-                  height: isExpanded ? "auto" : 0,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="mt-2 text-xs sm:text-sm text-foreground/80"
+              <div
+                className={cn(
+                  "grid transition-all duration-500 ease-out",
+                  isExpanded ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0 mt-0"
+                )}
               >
-                {description}
-              </motion.div>
+                <div className="overflow-hidden text-xs sm:text-sm text-foreground/80">
+                  {description}
+                </div>
+              </div>
             )}
           </div>
 

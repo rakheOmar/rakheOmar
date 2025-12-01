@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { Badge } from "../ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 const skills = [
   "C",
@@ -30,34 +29,14 @@ export default function SkillsSection() {
   return (
     <section id="skills">
       <div className="flex min-h-0 flex-col gap-y-3">
-        <motion.h2
-          className="text-xl text-foreground font-serif mb-3"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Skills
-        </motion.h2>
-        <motion.div
-          className="flex flex-wrap gap-1"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        <h2 className="text-xl text-foreground font-serif mb-3">Skills</h2>
+        <div className="flex flex-wrap gap-1">
           {skills.map((skill, index) => (
-            <motion.div
-              key={skill}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
-            >
+            <div key={skill}>
               <Badge>{skill}</Badge>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

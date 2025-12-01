@@ -4,8 +4,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
 export function HackathonCard({ title, description, dates, location, image, links }) {
+  // CHANGED: <li> to <div> to prevent "li inside li" error
   return (
-    <li className="relative py-6 pl-14">
+    <div className="relative py-6 pl-14">
       <span className="absolute left-0 top-0 bottom-0 border-l border-border"></span>
 
       <div className="absolute left-0 top-1/2 -translate-y-[95%] -translate-x-1/2 bg-background rounded-full">
@@ -41,6 +42,6 @@ export function HackathonCard({ title, description, dates, location, image, link
           ))}
         </div>
       )}
-    </li>
+    </div>
   );
 }

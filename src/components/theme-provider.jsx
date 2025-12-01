@@ -1,12 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useThemeTransition } from "@/hooks/use-theme-transition";
 
-const initialState = {
+const ThemeProviderContext = createContext({
   theme: "system",
   setTheme: () => null,
-};
-
-const ThemeProviderContext = createContext(initialState);
+});
 
 export function ThemeProvider({
   children,
@@ -14,21 +11,22 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }) {
-  const [theme, setTheme] = useState(() => localStorage.getItem(storageKey) || defaultTheme);
-
-  // Apply theme transition animation
-  useThemeTransition(theme, "polygon");
+  const [theme, setThemeState] = useState(() => {
+    const saved = localStorage.getItem(storageKey);
+    if (saved === "light" || saved === "dark" || saved === "system") {
+      return saved;
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-
+    const root = document.documentElement;
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
-
       root.classList.add(systemTheme);
       return;
     }
@@ -38,17 +36,15 @@ export function ThemeProvider({
 
   const value = {
     theme,
-    setTheme: (newTheme) => {
-      // Use View Transitions API if supported
-      if (document.startViewTransition) {
-        document.startViewTransition(() => {
-          localStorage.setItem(storageKey, newTheme);
-          setTheme(newTheme);
-        });
-      } else {
-        localStorage.setItem(storageKey, newTheme);
-        setTheme(newTheme);
+    setTheme: (nextTheme) => {
+      if (typeof nextTheme === "function") {
+        nextTheme = nextTheme(theme);
       }
+      if (nextTheme !== "light" && nextTheme !== "dark" && nextTheme !== "system") {
+        return;
+      }
+      localStorage.setItem(storageKey, nextTheme);
+      setThemeState(nextTheme);
     },
   };
 
@@ -61,8 +57,8 @@ export function ThemeProvider({
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext);
-
-  if (context === undefined) throw new Error("useTheme must be used within a ThemeProvider");
-
+  if (context === undefined) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
   return context;
 };

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ResumeCard } from "@/components/detail-cards";
 
 const Education = [
@@ -32,23 +31,9 @@ export default function EducationSection() {
   return (
     <section id="education">
       <div className="flex min-h-0 flex-col gap-y-3">
-        <motion.h2
-          className="text-xl text-foreground font-serif mb-3"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Education
-        </motion.h2>
+        <h2 className="text-xl text-foreground font-serif mb-3">Education</h2>
         {Education.map((education, index) => (
-          <motion.div
-            key={education.title}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
+          <div key={education.title}>
             <ResumeCard
               href={education.href}
               logoUrl={education.logoUrl}
@@ -57,7 +42,7 @@ export default function EducationSection() {
               subtitle={education.subtitle}
               period={education.period}
             />
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

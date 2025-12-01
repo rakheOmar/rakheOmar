@@ -6,8 +6,11 @@ import {
   Moon02Icon,
   NewTwitterIcon,
   Sun03Icon,
-} from "hugeicons-react";
-import { FloatingDock } from "@/components/aceternity/floating-dock";
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Link } from "react-router-dom";
+
+import { Dock, DockIcon } from "@/components/magic-ui/Dock";
 import { useTheme } from "@/components/theme-provider";
 
 export default function PortfolioDock() {
@@ -15,47 +18,50 @@ export default function PortfolioDock() {
 
   const toggleTheme = (e) => {
     e.preventDefault();
-    console.log("Toggle clicked! Current theme:", theme);
     const newTheme = theme === "dark" ? "light" : "dark";
-    console.log("Setting theme to:", newTheme);
     setTheme(newTheme);
   };
+
+  const commonIconClass = "h-full w-full text-neutral-500 dark:text-neutral-300";
 
   const links = [
     {
       title: "Home",
-      icon: <Home01Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <HugeiconsIcon icon={Home01Icon} className={commonIconClass} />,
       href: "/",
     },
     {
       title: "Blog",
-      icon: <FileEditIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <HugeiconsIcon icon={FileEditIcon} className={commonIconClass} />,
       href: "/blog",
     },
     { separator: true },
     {
       title: "GitHub",
-      icon: <Github01Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <HugeiconsIcon icon={Github01Icon} className={commonIconClass} />,
       href: "https://github.com/rakheOmar",
+      target: "_blank",
     },
     {
       title: "LinkedIn",
-      icon: <Linkedin01Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-      href: "https://www.linkedin.com/in/rakheomar/",
+      icon: <HugeiconsIcon icon={Linkedin01Icon} className={commonIconClass} />,
+      href: "https://www.linkedin.com/in/rakheOmar/",
+      target: "_blank",
     },
     {
       title: "Twitter",
-      icon: <NewTwitterIcon className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
+      icon: <HugeiconsIcon icon={NewTwitterIcon} className={commonIconClass} />,
       href: "https://twitter.com/frostmage10",
+      target: "_blank",
     },
     { separator: true },
     {
       title: theme === "dark" ? "Light Mode" : "Dark Mode",
       icon:
         theme === "dark" ? (
-          <Sun03Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+          <HugeiconsIcon icon={Sun03Icon} className={commonIconClass} />
         ) : (
-          <Moon02Icon className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+          <HugeiconsIcon icon={Moon02Icon} className={commonIconClass} />
         ),
       href: "#",
       onClick: toggleTheme,
@@ -64,7 +70,37 @@ export default function PortfolioDock() {
 
   return (
     <div className="flex items-center justify-center w-full pb-4">
-      <FloatingDock items={links} />
+      <Dock direction="middle">
+        {links.map((item, idx) => {
+          if (item.separator) {
+            return (
+              <div
+                key={`sep-${idx}`}
+                className="h-8 w-[1px] bg-neutral-200 dark:bg-neutral-800 mx-1"
+              />
+            );
+          }
+
+          const isExternal = item.href.startsWith("http");
+          const LinkComponent = isExternal ? "a" : Link;
+
+          return (
+            <DockIcon key={item.title || idx}>
+              <LinkComponent
+                to={item.href}
+                href={item.href}
+                target={item.target}
+                rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                onClick={item.onClick}
+                className="flex h-full w-full items-center justify-center"
+                title={item.title}
+              >
+                {item.icon}
+              </LinkComponent>
+            </DockIcon>
+          );
+        })}
+      </Dock>
     </div>
   );
 }
