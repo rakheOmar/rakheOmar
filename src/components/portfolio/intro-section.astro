@@ -1,0 +1,72 @@
+---
+import { glimpse } from "@/components/kibo-ui/glimpse/server";
+import { SocialGlimpse } from "@/components/portfolio/social-glimpse";
+import portfolioData from "@/data/portfolio.json";
+
+const { intro } = portfolioData;
+
+const socialsWithGlimpse = await Promise.all(
+  (intro.socials || []).map(async (social) => {
+    let glimpseData: {
+      title: string | null;
+      description: string | null;
+      image: string | null;
+    } = { title: social.name, description: social.url, image: null };
+
+    try {
+      if (social.url.startsWith("mailto:")) {
+        glimpseData.title = "Email";
+        glimpseData.description = social.url.replace("mailto:", "");
+      } else {
+        const fetchedData = await glimpse(social.url);
+        glimpseData = { ...glimpseData, ...fetchedData };
+      }
+    } catch (e) {
+      console.error(`Failed to fetch glimpse for ${social.url}`, e);
+    }
+
+    if (social.image) {
+      glimpseData.image = social.image;
+    }
+
+    return { ...social, glimpseData };
+  })
+);
+---
+
+<section id="hero">
+  <div class="flex items-center justify-between gap-4">
+    <div class="flex flex-1 flex-col gap-2">
+      <div class="flex flex-col gap-1">
+        <h1 class="font-serif text-2xl tracking-tight sm:text-3xl">
+          {intro.greeting}
+        </h1>
+        <p class="max-w-lg text-muted-foreground text-sm">{intro.tagline}</p>
+      </div>
+
+      {socialsWithGlimpse.length > 0 && (
+        <div class="flex gap-4 mt-2">
+          {socialsWithGlimpse.map((social) => (
+            <SocialGlimpse 
+              client:load 
+              name={social.name} 
+              url={social.url} 
+              iconName={social.icon}
+              glimpseData={social.glimpseData}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+    <div
+      class="size-24 shrink-0 bg-muted rounded-full relative flex select-none after:absolute after:inset-0 after:border after:border-border after:rounded-full after:mix-blend-darken dark:after:mix-blend-lighten"
+    >
+      <img
+        alt={intro.name}
+        src={intro.avatarUrl}
+        class="rounded-full aspect-square size-full object-cover"
+        loading="eager"
+      >
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import { ResumeCard } from "@/components/resume-card";
+import portfolioData from "@/data/portfolio.json";
+
+const { education } = portfolioData;
+---
+
+<section id="education">
+  <div class="flex min-h-0 flex-col gap-y-2">
+    <h2 class="mb-2 font-serif text-lg">Education</h2>
+    {education.map((edu) => (
+      <ResumeCard
+        client:load
+        logoUrl={edu.logoUrl}
+        altText={edu.altText}
+        title={edu.title}
+        subtitle={edu.subtitle}
+        href={edu.href}
+        period={edu.period}
+      />
+    ))}
+  </div>
+</section>

@@ -1,0 +1,19 @@
+---
+import { Badge } from "@/components/ui/badge";
+import portfolioData from "@/data/portfolio.json";
+
+const { skills } = portfolioData;
+---
+
+<section id="skills">
+  <div class="flex min-h-0 flex-col gap-y-2">
+    <h2 class="mb-2 font-serif text-lg">Skills</h2>
+    <div class="flex flex-wrap gap-1">
+      {skills.map((skill) => (
+        <Badge className="h-5 text-xs" client:load variant="secondary">
+          {skill}
+        </Badge>
+      ))}
+    </div>
+  </div>
+</section>

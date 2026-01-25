@@ -1,0 +1,10 @@
+---
+import { GithubContributionsGraph } from "@/components/github-contributions-graph";
+
+const GITHUB_USERNAME = "rakheOmar";
+---
+
+<section class="w-full" id="contributions">
+  <h2 class="mb-2 font-serif text-lg">Contributions</h2>
+  <GithubContributionsGraph client:visible username={GITHUB_USERNAME} />
+</section>

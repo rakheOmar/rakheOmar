@@ -1,0 +1,23 @@
+---
+import { ContactSection } from "@/components/contact-section";
+import AboutSection from "@/components/portfolio/about-section.astro";
+import CertificationsSection from "@/components/portfolio/certifications-section.astro";
+import ContributingSection from "@/components/portfolio/contributing-section.astro";
+import EducationSection from "@/components/portfolio/education-section.astro";
+import HackathonSection from "@/components/portfolio/hackathon-section.astro";
+import IntroSection from "@/components/portfolio/intro-section.astro";
+import ProjectSection from "@/components/portfolio/project-section.astro";
+import SkillsSection from "@/components/portfolio/skills-section.astro";
+---
+
+<main class="portfolio-layout">
+  <IntroSection />
+  <AboutSection />
+  <ContributingSection />
+  <EducationSection />
+  <CertificationsSection />
+  <SkillsSection />
+  <ProjectSection />
+  <HackathonSection />
+  <ContactSection client:visible />
+</main>

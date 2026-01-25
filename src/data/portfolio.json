@@ -1,0 +1,238 @@
+{
+  "intro": {
+    "name": "Omar",
+    "greeting": "Hi, I'm Omar",
+    "tagline": "Full-Stack Dev meeting AI. I craft scalable applications and solve real-world problems with modern tech.",
+    "avatarUrl": "/portfolio_pfp.webp",
+    "socials": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/rakheOmar",
+        "icon": "github",
+        "image": "/social-preview/github.webp"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/omar-rakhe",
+        "icon": "linkedin",
+        "image": "/social-preview/linkedin.webp"
+      },
+      {
+        "name": "X",
+        "url": "https://x.com/rakheomar",
+        "icon": "note",
+        "image": "/social-preview/note.webp"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:rakheomar@gmail.com",
+        "icon": "mail",
+        "image": "/social-preview/email.webp"
+      }
+    ]
+  },
+  "about": {
+    "content": "I am currently <a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#education\">pursuing a B.E. in Artificial Intelligence & Data Science</a> while exploring the frontiers of Agentic AI. Over the last few years, I've competed in over <strong><a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#hackathon\">10+ hackathons</a></strong>, securing top podium finishes at events like Innovatex and VIT Hackbuild. Right now, I'm focused on building <a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#projects\">Markdrop</a>, a powerful visual markdown editor for developers."
+  },
+  "education": [
+    {
+      "title": "Thadomal Shahani Engineering College",
+      "href": "https://tsec.edu/",
+      "subtitle": "B.E. in Artificial Intelligence & Data Science",
+      "logoUrl": "/education-icons/tsec.webp",
+      "altText": "TSEC",
+      "period": "2023 - 2027"
+    },
+    {
+      "title": "Arya Gurukul International College",
+      "href": "https://agic.in/",
+      "subtitle": "Higher Secondary Certificate (HSC)",
+      "logoUrl": "/education-icons/agic.webp",
+      "altText": "AGIC",
+      "period": "2021 - 2023"
+    },
+    {
+      "title": "Saraswati Vidyalaya High School and Junior College of Science",
+      "href": "https://www.svptsaraswati.com/CBSE-School-Thane/",
+      "subtitle": "Secondary School Certificate (SSC)",
+      "logoUrl": "/education-icons/svpt.webp",
+      "altText": "SVPT",
+      "period": "2018 - 2021"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Building AI Agents & Agentic AI System via Microsoft AutoGen",
+      "href": "https://www.udemy.com/certificate/UC-5d01b2ac-3b24-4a5a-8bda-1f3c91b38a53/",
+      "subtitle": "Udemy",
+      "logoUrl": "/certification-icons/udemy.webp",
+      "altText": "Udemy",
+      "period": "Oct 2025"
+    },
+    {
+      "title": "Complete Data Science, Machine Learning, Deep Learning & NLP Bootcamp",
+      "href": "https://www.udemy.com/certificate/UC-3ba3fed5-1cc2-4830-874e-26fdd9f6700c/",
+      "subtitle": "Udemy",
+      "logoUrl": "/certification-icons/udemy.webp",
+      "altText": "Udemy",
+      "period": "Oct 2025"
+    }
+  ],
+  "skills": [
+    "C",
+    "Java",
+    "Python",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express",
+    "Tailwind CSS",
+    "MySQL",
+    "MongoDB",
+    "Supabase",
+    "Git",
+    "Postman",
+    "Machine Learning",
+    "Deep Learning",
+    "NLP",
+    "TensorFlow",
+    "scikit-learn",
+    "Microsoft AutoGen",
+    "Agentic AI",
+    "Transformers",
+    "LLMs"
+  ],
+  "projects": [
+    {
+      "title": "Markdrop",
+      "href": "https://markdrop.vercel.app/",
+      "active": true,
+      "description": "I built Markdrop to streamline documentation. It is a visual editor with a drag-and-drop interface and cloud sync, allowing developers to create professional READMEs without dealing with raw syntax.",
+      "links": [
+        {
+          "type": "Website",
+          "href": "https://markdrop.vercel.app/",
+          "icon": "globe"
+        },
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/Markdrop",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-preview/markdrop_preview.png",
+      "video": "/project-demo/markdrop.webm"
+    },
+    {
+      "title": "AnalyserGPT",
+      "href": "https://github.com/rakheOmar/AnalyserGPT",
+      "active": true,
+      "description": "A multi-agent AI system powered by Microsoft AutoGen and Streamlit. It orchestrates autonomous LLM agents to collaborate on complex analysis tasks, fully containerized with Docker for consistent deployment.",
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/AnalyserGPT",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-demo/analyser-gpt.webp",
+      "video": ""
+    },
+    {
+      "title": "KisaanCredit",
+      "href": "https://github.com/rakheOmar/KisaanCredit",
+      "active": true,
+      "description": "A 'Soil to Sale' ecosystem digitizing carbon markets for farmers. Features AI-driven remote verification, a gamified Flutter app, and blockchain-backed credit transparency.",
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/KisaanCredit",
+          "icon": "github"
+        }
+      ],
+      "image": "",
+      "video": "/project-demo/kisaan-credit.webm"
+    },
+    {
+      "title": "Replacement Calculator",
+      "href": "https://github.com/rakheOmar/Replacement-Calculator",
+      "active": true,
+      "description": "A Java Swing desktop application for Operational Research. It calculates optimal replacement schedules for deteriorating items by analyzing maintenance costs, resale value, and capital cost over time.",
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/Replacement-Calculator",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-demo/replacement-calculator.webp",
+      "video": ""
+    }
+  ],
+  "hackathons": [
+    {
+      "title": "Minithon",
+      "dates": "September 22, 2024",
+      "location": "Mumbai, India",
+      "description": "Ranked in **Top 8 finalists**. Built **TSEC - Student Dashboard**, a responsive front-end tool for managing student tasks and schedules.",
+      "image": "/hackathon-icons/minithon.webp",
+      "links": []
+    },
+    {
+      "title": "TSEC Innovatex",
+      "dates": "July 25, 2025",
+      "location": "Mumbai, India",
+      "description": "Secured **3rd place**. Built **PaperSprint**, a 15-minute document print-and-delivery platform featuring secure authentication and cloud storage integration.",
+      "image": "/hackathon-icons/tsec.webp"
+    },
+    {
+      "title": "Need for Code",
+      "dates": "August 6, 2025",
+      "location": "Mumbai, India",
+      "description": "Developed **MineSave**, a miner safety mechanism designed to detect hazards and improve communication in low-connectivity underground environments.",
+      "image": "/hackathon-icons/need-for-code.webp"
+    },
+    {
+      "title": "VIT Hackbuild",
+      "dates": "August 23, 2025",
+      "location": "Mumbai, India",
+      "description": "Secured **Top 3 in Web/App domain**. Built **SkillVerse**, a secure student freelance marketplace. Features include AI-driven proposal generation, verified skill assessments, and a Solidity smart contract for transparent, immutable transaction records.",
+      "image": "/hackathon-icons/vit.webp"
+    },
+    {
+      "title": "NABARD Hackathon",
+      "dates": "September 4, 2025",
+      "location": "Mumbai, India",
+      "description": "Developed **KisaanCredit**, a 'Soil to Sale' ecosystem using AI and Blockchain to democratize carbon markets for farmers.",
+      "image": "/hackathon-icons/nabard.webp"
+    },
+    {
+      "title": "Codeisance",
+      "dates": "September 27, 2025",
+      "location": "Mumbai, India",
+      "description": "Competed in a 24-hour hackathon. Developed **LifeSave**, a comprehensive platform using Agentic AI systems to streamline blood and organ donation by intelligently connecting donors, hospitals, and blood banks.",
+      "image": "/hackathon-icons/codeisance.webp"
+    },
+    {
+      "title": "Smart India Hackathon (SIH)",
+      "dates": "September 16 & October 15, 2025",
+      "location": "Remote",
+      "description": "Qualified in the internal round. Developed two major projects: **CiviSeva**, an AI-powered civic reporting platform with geospatial analysis and automated routing; and **Forensight**, a digital forensics tool utilizing multi-agent AI for automated evidence analysis and network visualization.",
+      "image": "/hackathon-icons/sih.webp"
+    },
+    {
+      "title": "Hacksync 2026",
+      "dates": "2026",
+      "location": "Mumbai, India",
+      "description": "Ranked in **Top 4 in AI/ML** and **Top 10 overall**. Built **Mirage**, an emotionally-intelligent AI companion featuring real-time emotion detection, 3D avatar lip-sync, and contextual memory.",
+      "image": "/hackathon-icons/hacksync.png"
+    },
+    {
+      "title": "Rubix 2026",
+      "dates": "January 2026",
+      "location": "Mumbai, India",
+      "description": "Secured **Top 10 overall**. Developed **RubixProctor**, a comprehensive proctoring ecosystem featuring dual-device 360° monitoring, agentic bot detection, offline resilience, and system lockdown capabilities via a custom Chrome extension and Electron app.",
+      "image": "/hackathon-icons/rubix.png"
+    }
+  ]
+}
