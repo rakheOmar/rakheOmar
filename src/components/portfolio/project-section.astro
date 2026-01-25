@@ -10,7 +10,7 @@ const { projects } = portfolioData;
   <div class="mx-auto flex flex-col gap-4 max-w-[800px]">
     {projects.map((project) => (
       <ProjectDetailCard
-        client:load
+        client:visible
         description={project.description}
         href={project.href}
         image={project.image}

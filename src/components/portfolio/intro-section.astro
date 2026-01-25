@@ -48,7 +48,7 @@ const socialsWithGlimpse = await Promise.all(
         <div class="flex gap-4 mt-2">
           {socialsWithGlimpse.map((social) => (
             <SocialGlimpse 
-              client:load 
+              client:visible
               name={social.name} 
               url={social.url} 
               iconName={social.icon}

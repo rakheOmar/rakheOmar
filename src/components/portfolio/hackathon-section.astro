@@ -12,7 +12,7 @@ const { hackathons } = portfolioData;
     {hackathons.map((project) => (
       <li>
         <HackathonCard
-          client:load
+          client:visible
           dates={project.dates}
           description={project.description}
           image={project.image}

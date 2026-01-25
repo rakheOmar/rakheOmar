@@ -40,7 +40,7 @@ export function HackathonCard({
           <AvatarImage
             alt={title}
             className="object-contain"
-            src={transformUrl({ url: image, width: 80, height: 80 }) || image}
+            src={image}
           />
           <AvatarFallback className="text-xs">{title[0]}</AvatarFallback>
         </Avatar>

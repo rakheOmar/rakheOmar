@@ -151,7 +151,8 @@ function LazyMedia({
 
   if (video) {
     return (
-      <button
+      // biome-ignore lint/a11y/noStaticElementInteractions: Hover logic for video preview
+      <div
         aria-label={`View ${title} project demo`}
         className={cn(
           "block w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
@@ -159,7 +160,6 @@ function LazyMedia({
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        type="button"
       >
         <div
           className="h-full w-full overflow-hidden bg-muted"
@@ -167,7 +167,7 @@ function LazyMedia({
         >
           {renderMedia()}
         </div>
-      </button>
+      </div>
     );
   }
 

@@ -120,7 +120,7 @@
           "icon": "github"
         }
       ],
-      "image": "/project-preview/markdrop_preview.png",
+      "image": "/project-preview/markdrop_preview.avif",
       "video": "/project-demo/markdrop.webm"
     },
     {
@@ -225,14 +225,14 @@
       "dates": "2026",
       "location": "Mumbai, India",
       "description": "Ranked in **Top 4 in AI/ML** and **Top 10 overall**. Built **Mirage**, an emotionally-intelligent AI companion featuring real-time emotion detection, 3D avatar lip-sync, and contextual memory.",
-      "image": "/hackathon-icons/hacksync.png"
+      "image": "/hackathon-icons/hacksync.avif"
     },
     {
       "title": "Rubix 2026",
       "dates": "January 2026",
       "location": "Mumbai, India",
       "description": "Secured **Top 10 overall**. Developed **RubixProctor**, a comprehensive proctoring ecosystem featuring dual-device 360° monitoring, agentic bot detection, offline resilience, and system lockdown capabilities via a custom Chrome extension and Electron app.",
-      "image": "/hackathon-icons/rubix.png"
+      "image": "/hackathon-icons/rubix.avif"
     }
   ]
 }
