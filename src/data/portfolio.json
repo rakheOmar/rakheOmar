@@ -2,32 +2,33 @@
   "intro": {
     "name": "Omar",
     "greeting": "Hi, I'm Omar",
-    "tagline": "Full-Stack Dev meeting AI. I craft scalable applications and solve real-world problems with modern tech.",
+    "tagline": "20 • engineer • developer • builder",
     "avatarUrl": "/portfolio_pfp.webp",
+    "resumeUrl": "/Resume.pdf",
     "socials": [
       {
         "name": "GitHub",
         "url": "https://github.com/rakheOmar",
         "icon": "github",
-        "image": "/social-preview/github.webp"
+        "image": "/social-preview/github_preview.png"
       },
       {
         "name": "LinkedIn",
         "url": "https://www.linkedin.com/in/omar-rakhe",
         "icon": "linkedin",
-        "image": "/social-preview/linkedin.webp"
+        "image": "/social-preview/linkedin_preview.png"
       },
       {
         "name": "X",
         "url": "https://x.com/rakheomar",
         "icon": "note",
-        "image": "/social-preview/note.webp"
+        "image": "/social-preview/x_preview.png"
       },
       {
         "name": "Email",
         "url": "mailto:rakheomar@gmail.com",
         "icon": "mail",
-        "image": "/social-preview/email.webp"
+        "image": "/portfolio_pfp.webp"
       }
     ]
   },

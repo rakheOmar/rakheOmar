@@ -1,5 +1,3 @@
-"use client";
-
 import {
   GithubIcon,
   Linkedin02Icon,
@@ -7,14 +5,7 @@ import {
   NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import {
-  Glimpse,
-  GlimpseContent,
-  GlimpseDescription,
-  GlimpseImage,
-  GlimpseTitle,
-  GlimpseTrigger,
-} from "@/components/kibo-ui/glimpse";
+import { Tooltip } from "@/components/ui/tooltip-card";
 
 interface SocialGlimpseProps {
   name: string;
@@ -51,9 +42,31 @@ export function SocialGlimpse({
     Icon = Mail02Icon;
   }
 
+  const isEmail = name === "Email";
+  const containerClass = isEmail ? "w-48" : "w-64";
+  const imageClass = isEmail ? "h-28" : "h-40";
+
+  const tooltipContent = (
+    <div className={`flex flex-col gap-2 ${containerClass}`}>
+      <img
+        alt={glimpseData.title ?? name}
+        className={`${imageClass} w-full bg-muted/20 object-cover rounded-md`}
+        src={glimpseData.image ?? ""}
+      />
+      <div>
+        <p className="font-semibold text-foreground">
+          {glimpseData.title || name}
+        </p>
+        <p className="text-xs text-muted-foreground line-clamp-2">
+          {glimpseData.description || url}
+        </p>
+      </div>
+    </div>
+  );
+
   return (
-    <Glimpse>
-      <GlimpseTrigger
+    <Tooltip content={tooltipContent} containerClassName="block">
+      <a
         aria-label={name}
         className="block cursor-pointer text-muted-foreground transition-colors hover:text-foreground"
         href={url}
@@ -61,18 +74,7 @@ export function SocialGlimpse({
         target="_blank"
       >
         <HugeiconsIcon icon={Icon} size={15} />
-      </GlimpseTrigger>
-      <GlimpseContent className="w-80">
-        <GlimpseImage
-          alt={glimpseData.title ?? name}
-          className="mb-2 h-32 w-full bg-muted/20 object-cover"
-          src={glimpseData.image ?? ""}
-        />
-        <GlimpseTitle>{glimpseData.title || name}</GlimpseTitle>
-        <GlimpseDescription>
-          {glimpseData.description || url}
-        </GlimpseDescription>
-      </GlimpseContent>
-    </Glimpse>
+      </a>
+    </Tooltip>
   );
 }

@@ -1,0 +1,67 @@
+---
+import portfolioData from "@/data/portfolio.json";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const { intro, about, skills } = portfolioData;
+
+const siteUrl = "https://rakheomar.me"; // Ensure this matches astro.config.mjs
+const ogImage = new URL("/og-image.png", siteUrl).href;
+
+// Construct Person Schema for AEO/GEO
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": intro.name,
+    "alternateName": "Omar Rakhe",
+    "description": intro.tagline,
+    "image": new URL(intro.avatarUrl, siteUrl).href,
+    "url": siteUrl,
+    "sameAs": intro.socials.map((social) => social.url),
+    "jobTitle": "Full-Stack Developer & AI Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "knowsAbout": skills,
+    "alumniOf": [
+        {
+            "@type": "CollegeOrUniversity",
+            "name": "Thadomal Shahani Engineering College"
+        }
+    ]
+  }
+};
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="Omar Rakhe" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={new URL(Astro.url.pathname, siteUrl).href} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={new URL(Astro.url.pathname, siteUrl).href} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={new URL(Astro.url.pathname, siteUrl).href} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- JSON-LD Schema for AEO -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />

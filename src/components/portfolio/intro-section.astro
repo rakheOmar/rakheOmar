@@ -1,6 +1,8 @@
 ---
 import { glimpse } from "@/components/kibo-ui/glimpse/server";
 import { SocialGlimpse } from "@/components/portfolio/social-glimpse";
+
+import { ResumeTooltip } from "@/components/portfolio/resume-tooltip";
 import portfolioData from "@/data/portfolio.json";
 
 const { intro } = portfolioData;
@@ -44,19 +46,26 @@ const socialsWithGlimpse = await Promise.all(
         <p class="max-w-lg text-muted-foreground text-sm">{intro.tagline}</p>
       </div>
 
-      {socialsWithGlimpse.length > 0 && (
-        <div class="flex gap-4 mt-2">
-          {socialsWithGlimpse.map((social) => (
-            <SocialGlimpse 
-              client:visible
-              name={social.name} 
-              url={social.url} 
-              iconName={social.icon}
-              glimpseData={social.glimpseData}
-            />
-          ))}
-        </div>
-      )}
+      <div class="flex items-center gap-3 mt-2">
+        {socialsWithGlimpse.length > 0 && (
+          <div class="flex gap-4">
+            {socialsWithGlimpse.map((social) => (
+              <SocialGlimpse 
+                client:visible
+                name={social.name} 
+                url={social.url} 
+                iconName={social.icon}
+                glimpseData={social.glimpseData}
+              />
+            ))}
+          </div>
+        )}
+        <ResumeTooltip
+          client:visible
+          url={intro.resumeUrl}
+          previewUrl="/social-preview/resume_preview.jpg"
+        />
+      </div>
     </div>
     <div
       class="size-24 shrink-0 bg-muted rounded-full relative flex select-none after:absolute after:inset-0 after:border after:border-border after:rounded-full after:mix-blend-darken dark:after:mix-blend-lighten"
