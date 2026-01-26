@@ -4,18 +4,21 @@ import { GithubIcon, Globe02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Image } from "@unpic/react";
 import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Item, ItemContent, ItemTitle } from "@/components/ui/item";
 import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemTitle,
-} from "@/components/ui/item";
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
 // Regex patterns defined at module level for performance
@@ -26,10 +29,18 @@ interface LinkItem {
   icon: React.ReactNode | string;
 }
 
+interface Teammate {
+  name: string;
+  url?: string;
+  avatar?: string;
+}
+
 interface ProjectDetailCardProps {
   title: string;
   href?: string;
   description: string;
+  techStack?: string[];
+  teammates?: Teammate[];
   link?: string;
   image?: string;
   video?: string;
@@ -152,8 +163,8 @@ function LazyMedia({
   if (video) {
     return (
       // biome-ignore lint/a11y/noStaticElementInteractions: Hover logic for video preview
+      // biome-ignore lint/a11y/noNoninteractiveElementInteractions: Visual preview only, interaction handled by parent
       <div
-        aria-label={`View ${title} project demo`}
         className={cn(
           "block w-full cursor-pointer text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           className
@@ -194,12 +205,19 @@ export function ProjectDetailCard({
   title,
   href,
   description,
+  techStack,
+  teammates,
   image,
   video,
   links,
   className,
 }: ProjectDetailCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // Logic to determine if "Read more" is needed
+  // Simple heuristic: string length > 200 chars?
+  const isLong = description.length > 200;
 
   return (
     <>
@@ -221,11 +239,11 @@ export function ProjectDetailCard({
           )}
         </DialogContent>
       </Dialog>
-      <div className={cn("block cursor-pointer", className)}>
+      <div className={cn("block", className)}>
         <Item className="flex-col items-start justify-between gap-3 px-0 py-0 hover:bg-transparent sm:flex-row">
           <ItemContent className="min-w-0 flex-1 flex-col items-start gap-1">
             <div className="flex w-full flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 <ItemTitle className="font-medium text-sm">
                   {href ? (
                     <a
@@ -240,48 +258,134 @@ export function ProjectDetailCard({
                     title
                   )}
                 </ItemTitle>
+                {links && links.length > 0 && (
+                  <div className="flex items-center gap-1.5">
+                    {links.map((linkItem) => {
+                      const iconName = linkItem.type?.toLowerCase() || "";
+                      let Icon = Globe02Icon;
+                      if (
+                        iconName.includes("github") ||
+                        iconName.includes("source")
+                      ) {
+                        Icon = GithubIcon;
+                      }
+
+                      return (
+                        <a
+                          className="text-muted-foreground hover:text-foreground"
+                          href={linkItem.href}
+                          key={linkItem.href}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          title={linkItem.type}
+                        >
+                          <HugeiconsIcon
+                            icon={Icon}
+                            size={14}
+                            strokeWidth={2}
+                          />
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
             </div>
 
-            {/* Mobile Media/Dates fallback */}
-
-            <ItemDescription className="line-clamp-2 text-xs">
-              {description}
-            </ItemDescription>
-
-            {links && links.length > 0 && (
-              <div className="mt-1.5 flex flex-wrap gap-2">
-                {links.map((linkItem) => {
-                  const iconName = linkItem.type?.toLowerCase() || "";
-                  let Icon = Globe02Icon;
-                  if (
-                    iconName.includes("github") ||
-                    iconName.includes("source")
-                  ) {
-                    Icon = GithubIcon;
-                  }
-
-                  return (
-                    <a
-                      className="flex items-center gap-1 rounded-md border bg-background px-1.5 py-0.5 font-medium text-[10px] transition-colors hover:bg-accent hover:text-accent-foreground"
-                      href={linkItem.href}
-                      key={linkItem.href}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <HugeiconsIcon icon={Icon} size={10} strokeWidth={2} />
-                      {linkItem.type}
-                    </a>
-                  );
-                })}
+            <div className="flex w-full flex-col gap-2">
+              <div
+                className={cn(
+                  "relative text-muted-foreground text-xs [&>h1]:font-bold [&>h2]:font-bold [&>p]:mb-1.5 [&>ul]:list-disc [&>ul]:pl-4",
+                  !isExpanded && isLong && "max-h-[4.5em] overflow-hidden"
+                )}
+              >
+                <ReactMarkdown>{description}</ReactMarkdown>
+                {!isExpanded && isLong && (
+                  <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-background to-transparent" />
+                )}
               </div>
-            )}
+
+              {isLong && (
+                <button
+                  aria-expanded={isExpanded}
+                  className="-mt-1 ml-0 block cursor-pointer text-foreground text-xs underline hover:opacity-80 focus:outline-none"
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  type="button"
+                >
+                  {isExpanded ? "Show less" : "Read more"}
+                </button>
+              )}
+
+              {(!isLong || isExpanded) && techStack && techStack.length > 0 && (
+                <div className="flex flex-wrap gap-1.5">
+                  {techStack.map((tech) => (
+                    <Badge
+                      className="h-5 px-1 py-0 text-[10px]"
+                      key={tech}
+                      variant="secondary"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+
+              {teammates && teammates.length > 0 && (
+                <div className="mt-1 flex items-center gap-2">
+                  <span className="font-medium text-[10px] text-muted-foreground">
+                    Built with:
+                  </span>
+                  <div className="flex -space-x-1.5">
+                    {teammates.map((teammate) => (
+                      <Tooltip key={teammate.name}>
+                        <TooltipTrigger className="cursor-default">
+                          {teammate.url ? (
+                            <a
+                              className="block rounded-full focus:outline-none focus:ring-2 focus:ring-ring"
+                              href={teammate.url}
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              <Avatar className="size-5 border border-background">
+                                <AvatarImage
+                                  alt={teammate.name}
+                                  src={teammate.avatar}
+                                />
+                                <AvatarFallback className="text-[8px]">
+                                  {teammate.name.charAt(0)}
+                                </AvatarFallback>
+                              </Avatar>
+                            </a>
+                          ) : (
+                            <div className="block rounded-full focus:outline-none focus:ring-2 focus:ring-ring">
+                              <Avatar className="size-5 border border-background">
+                                <AvatarImage
+                                  alt={teammate.name}
+                                  src={teammate.avatar}
+                                />
+                                <AvatarFallback className="text-[8px]">
+                                  {teammate.name.charAt(0)}
+                                </AvatarFallback>
+                              </Avatar>
+                            </div>
+                          )}
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{teammate.name}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </ItemContent>
 
           {/* Compact Thumbnail on the Right (Desktop) / Bottom (Mobile) */}
           <div className="mt-3 ml-0 block w-full sm:mt-0 sm:ml-4 sm:w-52">
             <div className="aspect-video w-full shrink-0 overflow-hidden rounded-md border bg-muted">
               <button
+                aria-label={`View ${title} demo`}
                 className="size-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 onClick={() => {
                   if (video) {

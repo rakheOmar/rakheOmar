@@ -32,7 +32,7 @@
     ]
   },
   "about": {
-    "content": "I am currently <a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#education\">pursuing a B.E. in Artificial Intelligence & Data Science</a> while exploring the frontiers of Agentic AI. Over the last few years, I've competed in over <strong><a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#hackathon\">10+ hackathons</a></strong>, securing top podium finishes at events like Innovatex and VIT Hackbuild. Right now, I'm focused on building <a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#projects\">Markdrop</a>, a powerful visual markdown editor for developers."
+    "content": "I am currently <a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#education\">pursuing a B.E. in Artificial Intelligence & Data Science</a> while exploring the frontiers of Agentic AI. Over the last few years, I've competed in over <strong><a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#hackathons\">10+ hackathons</a></strong>, securing top podium finishes at events like Innovatex and VIT Hackbuild. Right now, I'm focused on building <a class=\"font-medium text-foreground underline underline-offset-2 hover:opacity-80\" href=\"#projects\">Markdrop</a>, a powerful visual markdown editor for developers."
   },
   "education": [
     {
@@ -108,6 +108,14 @@
       "href": "https://markdrop.vercel.app/",
       "active": true,
       "description": "I built Markdrop to streamline documentation. It is a visual editor with a drag-and-drop interface and cloud sync, allowing developers to create professional READMEs without dealing with raw syntax.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "React DnD"
+      ],
+      "teammates": [],
       "links": [
         {
           "type": "Website",
@@ -127,7 +135,16 @@
       "title": "AnalyserGPT",
       "href": "https://github.com/rakheOmar/AnalyserGPT",
       "active": true,
-      "description": "A multi-agent AI system powered by Microsoft AutoGen and Streamlit. It orchestrates autonomous LLM agents to collaborate on complex analysis tasks, fully containerized with Docker for consistent deployment.",
+      "description": "AnalyserGPT demonstrates the potential of agentic workflows in data science. By orchestrating a team of specialized AI agents—including a Code Writer, a Data Analyst, and a Reviewer—the system can autonomously take a raw dataset, formulate hypotheses, write and execute analysis code, and generate comprehensive reports. Fully containerized with Docker, it ensures a consistent and isolated execution environment for the generated code, prioritizing security and reproducibility.",
+      "techStack": [
+        "Python",
+        "Microsoft AutoGen",
+        "Streamlit",
+        "Docker",
+        "Pandas",
+        "Plotly"
+      ],
+      "teammates": [],
       "links": [
         {
           "type": "Source",
@@ -135,14 +152,44 @@
           "icon": "github"
         }
       ],
-      "image": "/project-demo/analyser-gpt.webp",
+      "image": "/project-preview/analysergpt_preview.webp",
       "video": ""
     },
     {
       "title": "KisaanCredit",
       "href": "https://github.com/rakheOmar/KisaanCredit",
       "active": true,
-      "description": "A 'Soil to Sale' ecosystem digitizing carbon markets for farmers. Features AI-driven remote verification, a gamified Flutter app, and blockchain-backed credit transparency.",
+      "description": "KisaanCredit empowers small-scale farmers to participate in the global carbon credit market. Traditionally barred by high verification costs, farmers can now use this platform to prove their sustainable practices via satellite imagery analysis and AI verification. Credits are minted as tokens on the blockchain, ensuring transparency and traceability. A gamified mobile interface encourages continued adoption of eco-friendly farming techniques.",
+      "techStack": [
+        "Flutter",
+        "Solidity",
+        "Polygon",
+        "Python",
+        "Satellite API",
+        "FastAPI"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Rishit Sharma",
+          "avatar": "https://github.com/RishitSharma88.png",
+          "url": "https://github.com/RishitSharma88"
+        }
+      ],
       "links": [
         {
           "type": "Source",
@@ -150,14 +197,16 @@
           "icon": "github"
         }
       ],
-      "image": "",
+      "image": "/project-preview/kisaancredit_preview.png",
       "video": "/project-demo/kisaan-credit.webm"
     },
     {
       "title": "Replacement Calculator",
       "href": "https://github.com/rakheOmar/Replacement-Calculator",
       "active": true,
-      "description": "A Java Swing desktop application for Operational Research. It calculates optimal replacement schedules for deteriorating items by analyzing maintenance costs, resale value, and capital cost over time.",
+      "description": "This application serves as a practical tool for Operational Research, solving the classic Equipment Replacement Problem. It provides a graphical interface for users to input cost variables—maintenance, capital, and resale value—and algorithms to compute the optimal replacement age. The tool visualizes the average annual cost curve, making complex decision-making data easily interpretable for business owners and students.",
+      "techStack": ["Java", "Swing", "JFreeChart", "AWT"],
+      "teammates": [],
       "links": [
         {
           "type": "Source",
@@ -165,7 +214,7 @@
           "icon": "github"
         }
       ],
-      "image": "/project-demo/replacement-calculator.webp",
+      "image": "/project-preview/replacement_calculator_preview.webp",
       "video": ""
     }
   ],

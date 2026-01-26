@@ -1,0 +1,453 @@
+{
+  "projects": [
+    {
+      "title": "RubixProctor",
+      "href": "",
+      "active": true,
+      "description": "RubixProctor revolutionizes remote assessments by creating a cheat-proof environment without compromising user privacy. The ecosystem leverages a dual-device architecture: a desktop Electron app locks down the system environment, while a companion mobile web app provides a 360-degree view of the candidate's surroundings. Powered by lightweight agentic models running on the edge, it detects suspicious behavior, multiple faces, and unauthorized devices in real-time. The system features offline resilience, ensuring exam data integrity even during network fluctuations, and provides detailed post-exam integrity reports for administrators.",
+      "techStack": [
+        "Electron",
+        "React",
+        "Node.js",
+        "TensorFlow.js",
+        "WebRTC",
+        "Socket.io"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Rishit Sharma",
+          "avatar": "https://github.com/RishitSharma88.png",
+          "url": "https://github.com/RishitSharma88"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/rubixproctor_preview.png",
+      "video": ""
+    },
+    {
+      "title": "Mirage",
+      "href": "",
+      "active": true,
+      "description": "Mirage bridges the gap between human emotion and artificial intelligence. Unlike standard chatbots, Mirage perceives the user's emotional state in real-time using computer vision and audio analysis. It responds not just with text, but with empathetic voice modulation and facial expressions via a lifelike 3D avatar. The system maintains long-term contextual memory, allowing it to build a deepening rapport over time, making it an ideal companion for mental wellness and personalized assistance.",
+      "techStack": [
+        "Python",
+        "OpenCV",
+        "Three.js",
+        "OpenAI API",
+        "React",
+        "R3F"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Shreyas Pansare",
+          "avatar": "https://github.com/shreyas-exe.png",
+          "url": "https://github.com/shreyas-exe"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/mirage_preview.png",
+      "video": ""
+    },
+    {
+      "title": "PromptZerk",
+      "href": "",
+      "active": true,
+      "description": "PromptZerk is designed to be the ultimate workspace for prompt engineers and AI developers. It streamlines the iteration process of crafting, testing, and versioning prompts across multiple LLM providers. Features include variable injection, A/B testing of prompt variations, cost estimation, and a collaborative library for sharing effective prompt patterns.",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/promptzerk_preview.png",
+      "video": ""
+    },
+    {
+      "title": "Markdrop",
+      "href": "https://markdrop.vercel.app/",
+      "active": true,
+      "description": "I built Markdrop to streamline documentation. It is a visual editor with a drag-and-drop interface and cloud sync, allowing developers to create professional READMEs without dealing with raw syntax.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "React DnD"
+      ],
+      "teammates": [],
+      "links": [
+        {
+          "type": "Website",
+          "href": "https://markdrop.vercel.app/",
+          "icon": "globe"
+        },
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/Markdrop",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-preview/markdrop_preview.avif",
+      "video": "/project-demo/markdrop.webm"
+    },
+    {
+      "title": "AnalyserGPT",
+      "href": "https://github.com/rakheOmar/AnalyserGPT",
+      "active": true,
+      "description": "AnalyserGPT demonstrates the potential of agentic workflows in data science. By orchestrating a team of specialized AI agents—including a Code Writer, a Data Analyst, and a Reviewer—the system can autonomously take a raw dataset, formulate hypotheses, write and execute analysis code, and generate comprehensive reports. Fully containerized with Docker, it ensures a consistent and isolated execution environment for the generated code, prioritizing security and reproducibility.",
+      "techStack": [
+        "Python",
+        "Microsoft AutoGen",
+        "Streamlit",
+        "Docker",
+        "Pandas",
+        "Plotly"
+      ],
+      "teammates": [],
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/AnalyserGPT",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-preview/analysergpt_preview.webp",
+      "video": ""
+    },
+    {
+      "title": "Forensight",
+      "href": "",
+      "active": true,
+      "description": "Forensight transforms the manual, labor-intensive process of digital forensics into an automated, intelligent workflow. Utilizing a multi-agent AI architecture, it parses vast amounts of system logs, network traffic, and file metadata to identify anomalies and potential security breaches. The system visualizes complex relationships between entities using graph databases, allowing investigators to intuitively trace the attack vector and timeline.",
+      "techStack": [
+        "Python",
+        "LangChain",
+        "Neo4j",
+        "React",
+        "FastAPI",
+        "D3.js"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Rishit Sharma",
+          "avatar": "https://github.com/RishitSharma88.png",
+          "url": "https://github.com/RishitSharma88"
+        },
+        {
+          "name": "Raj Telang",
+          "avatar": "https://github.com/TelangRaj.png",
+          "url": "https://github.com/TelangRaj"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/forensight_preview.png",
+      "video": ""
+    },
+    {
+      "title": "CiviSeva",
+      "href": "",
+      "active": true,
+      "description": "CiviSeva uses technology to bridge the communication gap between citizens and municipal authorities. The platform allows users to easily report civic issues like potholes or garbage accumulation via a mobile app. Computer vision algorithms automatically categorize the severity of the reports, while geospatial analysis optimizes the routing for maintenance crews. This data-driven approach ensures faster resolution times and better resource allocation for city management.",
+      "techStack": [
+        "Flutter",
+        "Firebase",
+        "Google Maps API",
+        "TensorFlow Lite",
+        "Python"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Rishit Sharma",
+          "avatar": "https://github.com/RishitSharma88.png",
+          "url": "https://github.com/RishitSharma88"
+        },
+        {
+          "name": "Raj Telang",
+          "avatar": "https://github.com/TelangRaj.png",
+          "url": "https://github.com/TelangRaj"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/civiseva_preview.png",
+      "video": ""
+    },
+    {
+      "title": "LifeSave",
+      "href": "",
+      "active": true,
+      "description": "LifeSave addresses the critical logistics of emergency medical supplies. By creating a unified network of donors, hospitals, and blood banks, the platform ensures real-time visibility of inventory. An Agentic AI core constantly monitors demand and supply, automatically triggering alerts and matching donors to patients in need. The system aims to minimize wastage and reduce the time taken to find compatible donors during emergencies.",
+      "techStack": [
+        "MERN Stack",
+        "Socket.io",
+        "Twilio API",
+        "OpenAI",
+        "Google Maps API"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Raj Telang",
+          "avatar": "https://github.com/TelangRaj.png",
+          "url": "https://github.com/TelangRaj"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/lifesave_preview.png",
+      "video": ""
+    },
+    {
+      "title": "KisaanCredit",
+      "href": "https://github.com/rakheOmar/KisaanCredit",
+      "active": true,
+      "description": "KisaanCredit empowers small-scale farmers to participate in the global carbon credit market. Traditionally barred by high verification costs, farmers can now use this platform to prove their sustainable practices via satellite imagery analysis and AI verification. Credits are minted as tokens on the blockchain, ensuring transparency and traceability. A gamified mobile interface encourages continued adoption of eco-friendly farming techniques.",
+      "techStack": [
+        "Flutter",
+        "Solidity",
+        "Polygon",
+        "Python",
+        "Satellite API",
+        "FastAPI"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Rishit Sharma",
+          "avatar": "https://github.com/RishitSharma88.png",
+          "url": "https://github.com/RishitSharma88"
+        }
+      ],
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/KisaanCredit",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-preview/kisaancredit_preview.png",
+      "video": "/project-demo/kisaan-credit.webm"
+    },
+    {
+      "title": "SkillVerse",
+      "href": "",
+      "active": true,
+      "description": "SkillVerse creates a safe and meritocratic environment for student freelancers. By integrating blockchain smart contracts for escrow and payments, it eliminates the risk of non-payment. AI tools assist students in writing professional proposals and assessing their market rates. The platform focuses on verified skill tests to build trust between clients and student developers, fostering a thriving gig economy within the campus ecosystem.",
+      "techStack": [
+        "Next.js",
+        "Ethereum",
+        "IPFS",
+        "Tailwind CSS",
+        "Solidity",
+        "Web3.js"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Raj Telang",
+          "avatar": "https://github.com/TelangRaj.png",
+          "url": "https://github.com/TelangRaj"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/skillverse_preview.png",
+      "video": ""
+    },
+    {
+      "title": "PaperSprint",
+      "href": "",
+      "active": true,
+      "description": "PaperSprint is an on-demand logistics solution for campus printing needs. Recognizing the stress of last-minute submissions, the platform allows students to upload documents from anywhere, pay securely, and have prints delivered to their location within 15 minutes. It integrates with cloud storage providers for seamless file access and uses a real-time tracking system to keep users updated on their delivery status.",
+      "techStack": [
+        "React",
+        "Node.js",
+        "Razorpay",
+        "AWS S3",
+        "Express",
+        "MongoDB"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Raj Telang",
+          "avatar": "https://github.com/TelangRaj.png",
+          "url": "https://github.com/TelangRaj"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/papersprint_preview.png",
+      "video": ""
+    },
+    {
+      "title": "TSEC - Student Dashboard",
+      "href": "",
+      "active": true,
+      "description": "The TSEC Student Dashboard is a unified digital interface for the academic experience. It aggregates scattered information—timetables, exam schedules, attendance records, and notices—into a single, intuitive dashboard. Built with a focus on responsive design and accessibility, it helps students manage their academic responsibilities efficiently from any device.",
+      "techStack": ["HTML", "CSS", "JavaScript", "Bootstrap", "Chart.js"],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Yash Singrodia",
+          "avatar": "https://github.com/Yash19075.png",
+          "url": "https://github.com/Yash19075"
+        },
+        {
+          "name": "Rishit Sharma",
+          "avatar": "https://github.com/RishitSharma88.png",
+          "url": "https://github.com/RishitSharma88"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/tsec_student_dashboard_preview.png",
+      "video": ""
+    },
+    {
+      "title": "Replacement Calculator",
+      "href": "https://github.com/rakheOmar/Replacement-Calculator",
+      "active": true,
+      "description": "This application serves as a practical tool for Operational Research, solving the classic Equipment Replacement Problem. It provides a graphical interface for users to input cost variables—maintenance, capital, and resale value—and algorithms to compute the optimal replacement age. The tool visualizes the average annual cost curve, making complex decision-making data easily interpretable for business owners and students.",
+      "techStack": ["Java", "Swing", "JFreeChart", "AWT"],
+      "teammates": [],
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/Replacement-Calculator",
+          "icon": "github"
+        }
+      ],
+      "image": "/project-preview/replacement_calculator_preview.webp",
+      "video": ""
+    }
+  ]
+}

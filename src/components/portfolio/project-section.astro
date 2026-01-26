@@ -1,23 +1,39 @@
 ---
 import { ProjectDetailCard } from "@/components/project-detail-card";
 import portfolioData from "@/data/portfolio.json";
+import { Separator } from "@/components/ui/separator";
 
 const { projects } = portfolioData;
 ---
 
 <section id="projects">
-  <h2 class="mb-6 font-serif text-lg">Projects</h2>
+  <div class="mb-6 flex items-center justify-between">
+    <h2 class="font-serif text-lg">Projects</h2>
+    <a
+      href="/projects"
+      class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+    >
+      See all my projects →
+    </a>
+  </div>
   <div class="mx-auto flex flex-col gap-4 max-w-[800px]">
-    {projects.map((project) => (
-      <ProjectDetailCard
-        client:visible
-        description={project.description}
-        href={project.href}
-        image={project.image}
-        links={project.links}
-        title={project.title}
-        video={project.video}
-      />
-    ))}
+        {projects.map((project, index) => (
+          <>
+            <ProjectDetailCard
+              client:visible
+              description={project.description}
+              href={project.href}
+              image={project.image}
+              links={project.links}
+              title={project.title}
+              video={project.video}
+              techStack={project.techStack}
+              teammates={project.teammates}
+            />
+            {index < projects.length - 1 && (
+              <Separator className=" opacity-50" />
+            )}
+          </>
+        ))}
   </div>
 </section>

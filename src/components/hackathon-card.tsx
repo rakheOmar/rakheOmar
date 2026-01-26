@@ -1,7 +1,6 @@
 "use client";
 
 import Markdown from "react-markdown";
-import { transformUrl } from "unpic";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Item,
@@ -37,11 +36,7 @@ export function HackathonCard({
 
       <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-background">
         <Avatar className="size-10 border-none bg-muted">
-          <AvatarImage
-            alt={title}
-            className="object-contain"
-            src={image}
-          />
+          <AvatarImage alt={title} className="object-contain" src={image} />
           <AvatarFallback className="text-xs">{title[0]}</AvatarFallback>
         </Avatar>
       </div>
@@ -70,11 +65,11 @@ export function HackathonCard({
             <div className="mt-2 flex flex-wrap gap-2">
               {links.map((link) => (
                 <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] hover:bg-muted"
+                  href={link.href}
+                  key={link.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   {link.icon}
                   {link.title}

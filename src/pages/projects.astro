@@ -1,0 +1,48 @@
+---
+import { ProjectDetailCard } from "@/components/project-detail-card";
+import { Separator } from "@/components/ui/separator";
+import projectsData from "@/data/projects.json";
+import Layout from "@/layouts/layout.astro";
+
+const { projects } = projectsData;
+---
+
+<Layout
+  title="Projects | Omar Rakhe"
+  description="Explore all my projects - from AI-powered tools to full-stack web applications."
+>
+  <main class="portfolio-layout">
+    <section id="all-projects">
+      <div class="mb-6 flex items-center gap-3">
+        <a
+          href="/"
+          class="text-muted-foreground transition-colors hover:text-foreground"
+          aria-label="Go back to home"
+        >
+          ←
+        </a>
+        <h1 class="font-serif text-2xl tracking-tight sm:text-3xl">Projects</h1>
+      </div>
+      <div class="mx-auto flex max-w-[800px] flex-col gap-4">
+        {projects.map((project, index) => (
+          <>
+            <ProjectDetailCard
+              client:visible
+              description={project.description}
+              href={project.href}
+              image={project.image}
+              links={project.links}
+              title={project.title}
+              video={project.video}
+              techStack={project.techStack}
+              teammates={project.teammates}
+            />
+            {index < projects.length - 1 && (
+              <Separator className=" opacity-50" />
+            )}
+          </>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
