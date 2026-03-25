@@ -48,6 +48,32 @@ interface ProjectDetailCardProps {
   className?: string;
 }
 
+function getGitHubOgImageUrl(url?: string): string | undefined {
+  if (!url) {
+    return undefined;
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname !== "github.com") {
+      return undefined;
+    }
+
+    const segments = parsedUrl.pathname.split("/").filter(Boolean);
+    if (segments.length < 2) {
+      return undefined;
+    }
+
+    const owner = segments[0];
+    const repo = segments[1];
+
+    return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+  } catch {
+    return undefined;
+  }
+}
+
 function LazyMedia({
   video,
   image,
@@ -67,6 +93,7 @@ function LazyMedia({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const fallbackImage = image || getGitHubOgImageUrl(href) || "/og-image.png";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -115,7 +142,7 @@ function LazyMedia({
             ref={videoRef}
             src={video}
           />
-          {image && (
+          {fallbackImage && (
             <div
               className={cn(
                 "absolute inset-0 z-10 size-full transition-opacity duration-300",
@@ -130,7 +157,7 @@ function LazyMedia({
                 )}
                 height={360}
                 layout="constrained"
-                src={image}
+                src={fallbackImage}
                 width={640}
               />
             </div>
@@ -139,14 +166,14 @@ function LazyMedia({
       );
     }
 
-    if (image) {
+    if (fallbackImage) {
       return (
         <Image
           alt={title}
           className={cn("size-full object-cover object-top", imageClassName)}
           height={360}
           layout="constrained"
-          src={image}
+          src={fallbackImage}
           width={640}
         />
       );

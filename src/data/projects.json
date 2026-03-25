@@ -1,10 +1,78 @@
 {
   "projects": [
     {
+      "title": "DebunkAI",
+      "href": "",
+      "active": true,
+      "description": "DebunkAI is an agentic misinformation detection ecosystem with a FastAPI + LangGraph backend, a React dashboard, a Chrome extension, and a Flutter mobile app. It ingests content from social platforms, verifies claims against trusted sources, and can generate evidence-backed counter-responses when high-risk false narratives start spreading.",
+      "techStack": [
+        "LangGraph",
+        "Groq",
+        "Supabase",
+        "Flutter",
+        "React",
+        "Vite",
+        "shadcn/ui",
+        "Chrome Extension",
+        "Node.js",
+        "Python",
+        "FastAPI"
+      ],
+      "teammates": [
+        {
+          "name": "Omar Rakhe",
+          "avatar": "/portfolio_pfp.webp",
+          "url": "https://github.com/rakheOmar"
+        },
+        {
+          "name": "Shreyas Pansare",
+          "avatar": "https://github.com/shreyas-exe.png",
+          "url": "https://github.com/shreyas-exe"
+        },
+        {
+          "name": "Tejas Sidhwani",
+          "avatar": "https://github.com/TejasS1233.png",
+          "url": "https://github.com/TejasS1233"
+        },
+        {
+          "name": "Janesh Shetty",
+          "avatar": "https://github.com/JANESH0007.png",
+          "url": "https://github.com/JANESH0007"
+        }
+      ],
+      "links": [],
+      "image": "/project-preview/debunkai_preview.png",
+      "video": ""
+    },
+    {
+      "title": "ML Network Security Project",
+      "href": "https://github.com/rakheOmar/ml-network-security-project",
+      "active": true,
+      "description": "This is an end-to-end phishing detection MLOps pipeline. It runs data ingestion, validation, transformation, model training, and experiment tracking, then serves predictions through a FastAPI API. I built it to make model training and deployment repeatable instead of notebook-driven.",
+      "techStack": [
+        "Python",
+        "scikit-learn",
+        "FastAPI",
+        "MLflow",
+        "MongoDB Atlas",
+        "Docker"
+      ],
+      "teammates": [],
+      "links": [
+        {
+          "type": "Source",
+          "href": "https://github.com/rakheOmar/ml-network-security-project",
+          "icon": "github"
+        }
+      ],
+      "image": "",
+      "video": ""
+    },
+    {
       "title": "RubixProctor",
       "href": "",
       "active": true,
-      "description": "RubixProctor revolutionizes remote assessments by creating a cheat-proof environment without compromising user privacy. The ecosystem leverages a dual-device architecture: a desktop Electron app locks down the system environment, while a companion mobile web app provides a 360-degree view of the candidate's surroundings. Powered by lightweight agentic models running on the edge, it detects suspicious behavior, multiple faces, and unauthorized devices in real-time. The system features offline resilience, ensuring exam data integrity even during network fluctuations, and provides detailed post-exam integrity reports for administrators.",
+      "description": "RubixProctor is our attempt to make remote exams harder to game without turning them into a privacy nightmare. It uses a dual-device setup: an Electron desktop app locks the system, and a companion Flutter mobile app gives a 360-degree room view. Edge models flag suspicious behavior, multiple faces, and unauthorized devices in real time. We also built offline handling so sessions remain reliable during unstable network conditions.",
       "techStack": [
         "Electron",
         "React",
@@ -43,7 +111,7 @@
       "title": "Mirage",
       "href": "",
       "active": true,
-      "description": "Mirage bridges the gap between human emotion and artificial intelligence. Unlike standard chatbots, Mirage perceives the user's emotional state in real-time using computer vision and audio analysis. It responds not just with text, but with empathetic voice modulation and facial expressions via a lifelike 3D avatar. The system maintains long-term contextual memory, allowing it to build a deepening rapport over time, making it an ideal companion for mental wellness and personalized assistance.",
+      "description": "Mirage is an AI companion that reacts to how you sound and look, not just what you type. It uses computer vision and audio cues to estimate emotional state, then responds through a 3D avatar with voice modulation and facial expressions. Long-term memory keeps conversations consistent over time, which makes interactions feel less disposable.",
       "techStack": [
         "Python",
         "OpenCV",
@@ -82,7 +150,7 @@
       "title": "PromptZerk",
       "href": "",
       "active": true,
-      "description": "PromptZerk is designed to be the ultimate workspace for prompt engineers and AI developers. It streamlines the iteration process of crafting, testing, and versioning prompts across multiple LLM providers. Features include variable injection, A/B testing of prompt variations, cost estimation, and a collaborative library for sharing effective prompt patterns.",
+      "description": "PromptZerk is a workspace for prompt engineers and AI developers. It helps you write, test, and version prompts across multiple LLM providers without switching tools. It includes variable injection, A/B prompt testing, cost estimation, and a shared prompt library.",
       "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
       "teammates": [
         {
@@ -104,7 +172,7 @@
       "title": "Markdrop",
       "href": "https://markdrop.vercel.app/",
       "active": true,
-      "description": "I built Markdrop to streamline documentation. It is a visual editor with a drag-and-drop interface and cloud sync, allowing developers to create professional READMEs without dealing with raw syntax.",
+      "description": "I built Markdrop because writing README files in raw markdown slows me down. It gives you a visual editor, drag-and-drop blocks, and cloud sync so you can publish polished docs quickly.",
       "techStack": [
         "Next.js",
         "TypeScript",
@@ -132,7 +200,7 @@
       "title": "AnalyserGPT",
       "href": "https://github.com/rakheOmar/AnalyserGPT",
       "active": true,
-      "description": "AnalyserGPT demonstrates the potential of agentic workflows in data science. By orchestrating a team of specialized AI agents—including a Code Writer, a Data Analyst, and a Reviewer—the system can autonomously take a raw dataset, formulate hypotheses, write and execute analysis code, and generate comprehensive reports. Fully containerized with Docker, it ensures a consistent and isolated execution environment for the generated code, prioritizing security and reproducibility.",
+      "description": "AnalyserGPT is a multi-agent data analysis app I built with Microsoft AutoGen. You can drop in a raw dataset, and the agents handle hypothesis generation, code writing, execution, and report creation. I containerized the runtime with Docker so generated code runs in an isolated, reproducible environment.",
       "techStack": [
         "Python",
         "Microsoft AutoGen",
@@ -156,7 +224,7 @@
       "title": "Forensight",
       "href": "",
       "active": true,
-      "description": "Forensight transforms the manual, labor-intensive process of digital forensics into an automated, intelligent workflow. Utilizing a multi-agent AI architecture, it parses vast amounts of system logs, network traffic, and file metadata to identify anomalies and potential security breaches. The system visualizes complex relationships between entities using graph databases, allowing investigators to intuitively trace the attack vector and timeline.",
+      "description": "Forensight automates parts of digital forensics that usually take hours of manual triage. It uses a multi-agent pipeline to parse logs, network traffic, and file metadata, then flags likely anomalies and breach signals. We used graph visualization so investigators can trace attack paths and timelines faster.",
       "techStack": [
         "Python",
         "LangChain",
@@ -200,7 +268,7 @@
       "title": "CiviSeva",
       "href": "",
       "active": true,
-      "description": "CiviSeva uses technology to bridge the communication gap between citizens and municipal authorities. The platform allows users to easily report civic issues like potholes or garbage accumulation via a mobile app. Computer vision algorithms automatically categorize the severity of the reports, while geospatial analysis optimizes the routing for maintenance crews. This data-driven approach ensures faster resolution times and better resource allocation for city management.",
+      "description": "CiviSeva is a civic reporting app for issues like potholes and garbage buildup. Citizens submit reports from mobile, computer vision tags severity, and geo-based routing helps municipal teams plan responses. The goal is simple: close issues faster with better use of field crews.",
       "techStack": [
         "Flutter",
         "Firebase",
@@ -243,7 +311,7 @@
       "title": "LifeSave",
       "href": "",
       "active": true,
-      "description": "LifeSave addresses the critical logistics of emergency medical supplies. By creating a unified network of donors, hospitals, and blood banks, the platform ensures real-time visibility of inventory. An Agentic AI core constantly monitors demand and supply, automatically triggering alerts and matching donors to patients in need. The system aims to minimize wastage and reduce the time taken to find compatible donors during emergencies.",
+      "description": "LifeSave coordinates donors, hospitals, and blood banks in one system with live inventory visibility. An agentic matching flow monitors demand and supply, triggers alerts, and suggests likely donor matches for urgent cases. We focused on reducing search time and wastage during emergencies.",
       "techStack": [
         "MERN Stack",
         "Socket.io",
@@ -281,7 +349,7 @@
       "title": "KisaanCredit",
       "href": "https://github.com/rakheOmar/KisaanCredit",
       "active": true,
-      "description": "KisaanCredit empowers small-scale farmers to participate in the global carbon credit market. Traditionally barred by high verification costs, farmers can now use this platform to prove their sustainable practices via satellite imagery analysis and AI verification. Credits are minted as tokens on the blockchain, ensuring transparency and traceability. A gamified mobile interface encourages continued adoption of eco-friendly farming techniques.",
+      "description": "KisaanCredit helps small farmers access carbon credit markets. The platform uses satellite imagery and AI checks to verify sustainable farming activity, then records credits on-chain for traceability. We also added a gamified mobile flow to keep day-to-day usage simple.",
       "techStack": [
         "Flutter",
         "Solidity",
@@ -326,7 +394,7 @@
       "title": "SkillVerse",
       "href": "",
       "active": true,
-      "description": "SkillVerse creates a safe and meritocratic environment for student freelancers. By integrating blockchain smart contracts for escrow and payments, it eliminates the risk of non-payment. AI tools assist students in writing professional proposals and assessing their market rates. The platform focuses on verified skill tests to build trust between clients and student developers, fostering a thriving gig economy within the campus ecosystem.",
+      "description": "SkillVerse is a student freelance marketplace built around trust and payout safety. Escrow and payments run through smart contracts, AI tools help with proposal drafting and rate estimation, and verified skill tests help clients evaluate candidates.",
       "techStack": [
         "Next.js",
         "Ethereum",
@@ -365,7 +433,7 @@
       "title": "PaperSprint",
       "href": "",
       "active": true,
-      "description": "PaperSprint is an on-demand logistics solution for campus printing needs. Recognizing the stress of last-minute submissions, the platform allows students to upload documents from anywhere, pay securely, and have prints delivered to their location within 15 minutes. It integrates with cloud storage providers for seamless file access and uses a real-time tracking system to keep users updated on their delivery status.",
+      "description": "PaperSprint handles last-minute campus printing. Students can upload files, pay online, and get prints delivered in about 15 minutes. It supports cloud file imports and live order tracking.",
       "techStack": [
         "React",
         "Node.js",
@@ -404,7 +472,7 @@
       "title": "TSEC - Student Dashboard",
       "href": "",
       "active": true,
-      "description": "The TSEC Student Dashboard is a unified digital interface for the academic experience. It aggregates scattered information—timetables, exam schedules, attendance records, and notices—into a single, intuitive dashboard. Built with a focus on responsive design and accessibility, it helps students manage their academic responsibilities efficiently from any device.",
+      "description": "TSEC Student Dashboard combines timetables, exam schedules, attendance, and notices in one place. We built it as a responsive interface so students can keep up with academic tasks from any device.",
       "techStack": ["HTML", "CSS", "JavaScript", "Bootstrap", "Chart.js"],
       "teammates": [
         {
@@ -436,7 +504,7 @@
       "title": "Replacement Calculator",
       "href": "https://github.com/rakheOmar/Replacement-Calculator",
       "active": true,
-      "description": "This application serves as a practical tool for Operational Research, solving the classic Equipment Replacement Problem. It provides a graphical interface for users to input cost variables—maintenance, capital, and resale value—and algorithms to compute the optimal replacement age. The tool visualizes the average annual cost curve, making complex decision-making data easily interpretable for business owners and students.",
+      "description": "This app solves the Equipment Replacement Problem from Operations Research. Users enter maintenance, purchase, and resale values, and the tool computes the optimal replacement year. It also plots the average annual cost curve so the tradeoffs are easy to read.",
       "techStack": ["Java", "Swing", "JFreeChart", "AWT"],
       "teammates": [],
       "links": [
